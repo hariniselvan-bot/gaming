@@ -25,7 +25,7 @@ header.scrolled{background:#18132b}
 }.dropdown-menu{position:absolute;top:100%;left:0;background:#23173b;min-width:220px;display:none;list-style:none;box-shadow:0 20px 35px rgba(0,0,0,.35)}
 .dropdown-menu li a{display:block;padding:14px 18px;color:#fff;text-decoration:none}
 .dropdown-menu li a:hover{background:#332253}
-.dropdown.open .dropdown-menu,.dropdown:hover .dropdown-menu{display:block}
+.dropdown:hover .dropdown-menu{display:block}
 .icons{display:flex;gap:24px;font-size:18px}
 .icons i{cursor:pointer;transition:.3s}
 .icons i:hover{color:#b08cff}
@@ -50,16 +50,259 @@ header.scrolled{background:#18132b}
 .hero{height:100vh;background:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=80') center/cover}
 .hero::before{content:"";position:absolute;inset:0;background:rgba(42,25,70,.6)}
 .hero h1{position:relative;z-index:1;text-align:center;padding-top:45vh;font-size:64px;letter-spacing:8px}
+/* ===========================
+   MOBILE LINK (Hidden on Desktop)
+=========================== */
+
+.mobile-link{
+    display:none;
+}
+
+.desktop-link{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+.mobile-icons{
+    display:none;
+}
 @media(max-width:991px){
-.hamburger{display:flex}
-.icons{display:none}
-nav{position:fixed;right:-100%;top:90px;width:290px;height:calc(100vh - 90px);background:#18122a;transition:.35s;overflow:auto}
-nav.show{right:0}
-.nav-links{flex-direction:column;gap:0}
-.nav-links>li::after{display:none}
-.nav-links>li>a{padding:18px 22px}
-.dropdown-menu{position:static;display:none;box-shadow:none;background:#24183d}
-.dropdown.open .dropdown-menu{display:block}
+.dropdown-menu{
+    display:none;
+}
+
+/* Hamburger */
+.hamburger{
+    display:flex;
+}
+
+/* Show icons on mobile */
+.icons{
+    display:flex;
+    gap:18px;
+    margin-left:auto;
+    margin-right:18px;
+    font-size:20px;
+}
+
+.icons a{
+    color:#fff;
+    text-decoration:none;
+}
+
+/* Mobile Menu */
+nav{
+    position:fixed;
+    right:-100%;
+    top:90px;
+    width:290px;
+    height:calc(100vh - 90px);
+    background:#18122a;
+    transition:.35s;
+    overflow:auto;
+}
+
+nav.show{
+    right:0;
+}
+
+.nav-links{
+    flex-direction:column;
+    gap:0;
+}
+
+/* Remove underline on mobile */
+.nav-links>li::after{
+    display:none;
+}
+
+/* Hide desktop links */
+.desktop-link{
+    display:none !important;
+}
+
+/* Show mobile links */
+.mobile-link{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* Mobile text */
+.mobile-link a{
+    flex:1;
+    color:#fff;
+    text-decoration:none;
+    padding:18px 22px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* Arrow */
+.dropdown-toggle{
+    width:55px;
+    text-align:center;
+    cursor:pointer;
+    color:#fff;
+    font-size:14px;
+}
+
+/* Dropdown */
+.dropdown-menu{
+    position:static;
+    display:none;
+    box-shadow:none;
+    background:#24183d;
+}
+
+/* Open dropdown */
+.dropdown.open .dropdown-menu{
+    display:block;
+}
+
+.dropdown-menu li a{
+    padding:15px 35px;
+}
+
+/* Normal menu items */
+.nav-links>li:not(.dropdown)>a{
+    display:block;
+    padding:18px 22px;
+}
+
+}
+@media(max-width:991px){
+
+/* Header */
+.navbar{
+    padding:0 20px;
+}
+
+/* Hamburger */
+.hamburger{
+    display:flex;
+}
+
+/* Hide desktop icons */
+.icons{
+    display:none;
+}
+
+/* Mobile Menu */
+nav{
+    position:fixed;
+    top:90px;
+    right:-100%;
+    width:290px;
+    height:calc(100vh - 90px);
+    background:#18122a;
+    transition:.35s;
+    overflow-y:auto;
+}
+
+nav.show{
+    right:0;
+}
+
+/* Menu */
+.nav-links{
+    flex-direction:column;
+    gap:0;
+}
+
+.nav-links>li::after{
+    display:none;
+}
+
+/* Hide desktop dropdown link */
+.desktop-link{
+    display:none !important;
+}
+
+/* Show mobile version */
+.mobile-link{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.mobile-link a{
+    flex:1;
+    color:#fff;
+    text-decoration:none;
+    padding:18px 22px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.dropdown-toggle{
+    width:55px;
+    text-align:center;
+    cursor:pointer;
+    font-size:15px;
+    color:#fff;
+}
+
+/* Dropdown */
+.dropdown-menu{
+    position:static;
+    display:none;
+    background:#24183d;
+    box-shadow:none;
+}
+
+.dropdown.open .dropdown-menu{
+    display:block;
+}
+
+.dropdown-menu li a{
+    display:block;
+    padding:15px 40px;
+}
+
+/* Normal links */
+.nav-links>li:not(.dropdown)>a{
+    display:block;
+    padding:18px 22px;
+}
+
+/* ==========================
+   Mobile Icons
+========================== */
+
+.mobile-icons{
+    display:flex;
+    flex-direction:column;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:15px;
+    padding-top:15px;
+}
+
+.mobile-icons a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:16px 22px;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.mobile-icons a:hover{
+    background:#24183d;
+}
+
+.mobile-icons i{
+    width:22px;
+    text-align:center;
+    font-size:18px;
+}
+
+.mobile-icons span{
+    font-size:14px;
+    font-weight:500;
+}
+
 }
 </style>
 </head>
@@ -68,57 +311,134 @@ nav.show{right:0}
 <header id="header">
 <div class="navbar">
 
-<div class="logo">
-<img src="logo.webp" alt="Stackly Logo">
-</div>
+    <!-- Logo -->
+    <div class="logo">
+        <img src="logo.webp" alt="Stackly Logo">
+    </div>
 
-<nav id="nav">
-<ul class="nav-links">
-<li >
-    <a href="home.html">HOME</a>
-</li>
-<li class="dropdown active">
-<a href="service.html">SERVICES <i class="fa-solid fa-chevron-down"></i></a>
-<ul class="dropdown-menu">
-<li><a href="404.html">Repair</a></li>
-<li><a href="404.html">warranty</a></li>
-<li><a href="404.html">complaint</a></li>
-</ul>
-</li>
+    <!-- Navigation -->
+    <nav id="nav">
+        <ul class="nav-links">
 
-<li class="dropdown">
-<a href="Games.html">Games <i class="fa-solid fa-chevron-down"></i></a>
-<ul class="dropdown-menu">
-<li><a href="404.html">Ghost hunter</a></li>
-<li><a href="404.html">HANA MONTANA</a></li>
-<li><a href="404.html">Cricket</a></li>
-</ul>
-</li>
+            <!-- Home -->
+            <li>
+                <a href="home.html">HOME</a>
+            </li>
 
-<li><a href="blog.html">BLOG</a></li>
-<li><a href="contact.html">CONTACT</a></li>
-</ul>
-</nav>
+            <!-- Services -->
+            <li class="active class="dropdown">
 
-<div class="icons">
+                <!-- Desktop -->
+                <a href="service.html" class="desktop-link">
+                    SERVICES
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+
+                <!-- Mobile -->
+                <div class="mobile-link">
+
+                    <a href="service.html">
+                        SERVICES
+                    </a>
+
+                    <span class="dropdown-toggle">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+
+                </div>
+
+                <ul class="dropdown-menu">
+                    <li><a href="404.html">Repair</a></li>
+                    <li><a href="404.html">Warranty</a></li>
+                    <li><a href="404.html">Complaint</a></li>
+                </ul>
+
+            </li>
+
+            <!-- Games -->
+            <li class="dropdown">
+
+                <!-- Desktop -->
+                <a href="Games.html" class="desktop-link">
+                    GAMES
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+
+                <!-- Mobile -->
+                <div class="mobile-link">
+
+                    <a href="Games.html">
+                        GAMES
+                    </a>
+
+                    <span class="dropdown-toggle">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+
+                </div>
+
+                <ul class="dropdown-menu">
+                    <li><a href="404.html">Ghost Hunter</a></li>
+                    <li><a href="404.html">HANA MONTANA</a></li>
+                    <li><a href="404.html">Cricket</a></li>
+                </ul>
+
+            </li>
+
+            <!-- Blog -->
+            <li ">
+                <a href="blog.html">BLOG</a>
+            </li>
+
+            <!-- Contact -->
+            <li>
+                <a href="contact.html">CONTACT</a>
+            </li>
+
+        </ul>
+        <div class="mobile-icons">
 
     <a href="login.html">
         <i class="fa-regular fa-user"></i>
+        <span>Login</span>
     </a>
 
     <a href="404.html">
         <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search</span>
     </a>
 
     <a href="404.html">
         <i class="fa-solid fa-cart-shopping"></i>
+        <span>Cart</span>
     </a>
 
 </div>
+    </nav>
 
-<div class="hamburger" id="burger">
-<span></span><span></span><span></span>
-</div>
+    <!-- Icons -->
+    <div class="icons">
+
+        <a href="login.html">
+            <i class="fa-regular fa-user"></i>
+        </a>
+
+        <a href="404.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="404.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
 </div>
 </header>
@@ -127,62 +447,86 @@ nav.show{right:0}
 
 <script>const burger = document.getElementById("burger");
 const nav = document.getElementById("nav");
-const dropdownLinks = document.querySelectorAll(".dropdown > a");
+const header = document.getElementById("header");
 
-// Toggle Mobile Menu
+// ===============================
+// Hamburger
+// ===============================
 burger.addEventListener("click", () => {
     nav.classList.toggle("show");
-    burger.classList.toggle("active");
 });
 
+// ===============================
 // Mobile Dropdown
-// Mobile Dropdown
-dropdownLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
+// ===============================
+document.querySelectorAll(".dropdown-toggle").forEach(btn => {
+
+    btn.addEventListener("click", function (e) {
+
+        if (window.innerWidth > 991) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const dropdown = this.closest(".dropdown");
+
+        // Close all other dropdowns
+        document.querySelectorAll(".dropdown").forEach(item => {
+
+            if (item !== dropdown) {
+                item.classList.remove("open");
+            }
+
+        });
+
+        // Open / Close current
+        dropdown.classList.toggle("open");
+
+    });
+
+});
+
+// ===============================
+// Close Menu After Clicking
+// Normal Links Only
+// ===============================
+document.querySelectorAll(".nav-links > li:not(.dropdown) a").forEach(link => {
+
+    link.addEventListener("click", () => {
 
         if (window.innerWidth <= 991) {
-            e.preventDefault();
-
-            const currentDropdown = this.parentElement;
-
-            // Close all other dropdowns
-            document.querySelectorAll(".dropdown").forEach(drop => {
-                if (drop !== currentDropdown) {
-                    drop.classList.remove("open");
-                }
-            });
-
-            // Toggle current one
-            currentDropdown.classList.toggle("open");
+            nav.classList.remove("show");
         }
+
     });
+
 });
 
-// Close menu after clicking a normal link
-document.querySelectorAll(".nav-links li:not(.dropdown) a").forEach(link => {
-    link.addEventListener("click", () => {
-        nav.classList.remove("show");
-        burger.classList.remove("active");
-    });
-});
-
-// Close menu when switching to desktop
+// ===============================
+// Reset
+// ===============================
 window.addEventListener("resize", () => {
-    if (window.innerWidth > 991) {
-        nav.classList.remove("show");
-        burger.classList.remove("active");
 
-        document.querySelectorAll(".dropdown").forEach(drop => {
-            drop.classList.remove("open");
+    if (window.innerWidth > 991) {
+
+        nav.classList.remove("show");
+
+        document.querySelectorAll(".dropdown").forEach(item => {
+            item.classList.remove("open");
         });
+
     }
+
 });
 
+// ===============================
 // Sticky Header
+// ===============================
 window.addEventListener("scroll", () => {
-    document.getElementById("header").classList.toggle("scrolled", window.scrollY > 20);
-});     
-</script>
+
+    header.classList.toggle("scrolled", window.scrollY > 20);
+
+});</script>
 
 <section class="stack-service-hero">
 

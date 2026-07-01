@@ -1,269 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>404 - Page Not Found</title>
-
+<title>Stackly Header</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Oxanium',sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Montserrat,sans-serif}
+body{background:#111;color:#fff}
+header{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(32, 20, 52, 0);backdrop-filter:blur(8px);transition:.35s}
+header.scrolled{background:#18132b}
+.navbar{max-width:1400px;height:90px;margin:auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center}
+.logo img{height:55px}
+.nav-links{display:flex;list-style:none;gap:38px}
+.nav-links>li{position:relative}
+.nav-links>li>a{text-decoration:none;color:#fff;font-size:14px;font-weight:600;letter-spacing:1px;padding:35px 0;display:flex;align-items:center;gap:6px}
+.nav-links>li::after{content:"";position:absolute;left:0;bottom:12px;width:0;height:2px;background:#fff;transition:.35s}
+.nav-links>li:hover::after,
+.nav-links>li.active::after{
+    width:100%;
+}.dropdown-menu{position:absolute;top:100%;left:0;background:#23173b;min-width:220px;display:none;list-style:none;box-shadow:0 20px 35px rgba(0,0,0,.35)}
+.dropdown-menu li a{display:block;padding:14px 18px;color:#fff;text-decoration:none}
+.dropdown-menu li a:hover{background:#332253}
+.dropdown:hover .dropdown-menu{display:block}
+.icons{display:flex;gap:24px;font-size:18px}
+.icons i{cursor:pointer;transition:.3s}
+.icons i:hover{color:#b08cff}
+.icons{
+    display:flex;
+    gap:24px;
+    font-size:18px;
 }
 
-body{
-background:#050505;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-overflow:hidden;
-color:#fff;
+.icons a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
 }
 
-.stackly404-section{
+.icons a:hover{
+    color:#b08cff;
+    transform:translateY(-3px);
+}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{width:28px;height:3px;background:#fff;transition:.3s}
+.hero{height:100vh;background:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=80') center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(42,25,70,.6)}
+.hero h1{position:relative;z-index:1;text-align:center;padding-top:45vh;font-size:64px;letter-spacing:8px}
+/* ===========================
+   MOBILE LINK (Hidden on Desktop)
+=========================== */
 
-width:100%;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
-padding:20px;
-
+.mobile-link{
+    display:none;
 }
 
-.stackly404-glow{
-
-position:absolute;
-width:550px;
-height:550px;
-border-radius:50%;
-background:radial-gradient(circle,
-rgba(255,0,0,.25),
-transparent);
-
-filter:blur(80px);
-
-animation:float 6s infinite ease-in-out;
-
+.desktop-link{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+.mobile-icons{
+    display:none;
+}
+@media(max-width:991px){
+.dropdown-menu{
+    display:none;
 }
 
-.stackly404-box{
-
-position:relative;
-
-z-index:2;
-
-background:#111;
-
-padding:60px;
-
-border-radius:25px;
-
-border:1px solid rgba(255,255,255,.08);
-
-width:700px;
-
-max-width:100%;
-
-text-align:center;
-
-box-shadow:0 0 40px rgba(255,0,0,.15);
-
+/* Hamburger */
+.hamburger{
+    display:flex;
 }
 
-.stackly404-box h1{
-
-font-size:160px;
-
-line-height:1;
-
-color:#ff2020;
-
+/* Show icons on mobile */
+.icons{
+    display:flex;
+    gap:18px;
+    margin-left:auto;
+    margin-right:18px;
+    font-size:20px;
 }
 
-.stackly404-box h2{
-
-font-size:40px;
-
-margin:20px 0;
-
+.icons a{
+    color:#fff;
+    text-decoration:none;
 }
 
-.stackly404-box p{
-
-color:#aaa;
-
-line-height:1.8;
-
-margin-bottom:40px;
-
+/* Mobile Menu */
+nav{
+    position:fixed;
+    right:-100%;
+    top:90px;
+    width:290px;
+    height:calc(100vh - 90px);
+    background:#18122a;
+    transition:.35s;
+    overflow:auto;
 }
 
-.stackly404-buttons{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
+nav.show{
+    right:0;
 }
 
-.stackly404-buttons button,
-.stackly404-buttons a{
-
-padding:16px 40px;
-
-border:none;
-
-outline:none;
-
-cursor:pointer;
-
-border-radius:50px;
-
-font-size:16px;
-
-font-weight:700;
-
-text-decoration:none;
-
-background:linear-gradient(90deg,#ff2020,#850000);
-
-color:#fff;
-
-transition:.35s;
-
+.nav-links{
+    flex-direction:column;
+    gap:0;
 }
 
-.stackly404-buttons button:hover,
-.stackly404-buttons a:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 0 25px rgba(255,0,0,.35);
-
+/* Remove underline on mobile */
+.nav-links>li::after{
+    display:none;
 }
 
-@keyframes float{
-
-50%{
-
-transform:translateY(-25px);
-
+/* Hide desktop links */
+.desktop-link{
+    display:none !important;
 }
 
+/* Show mobile links */
+.mobile-link{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-@media(max-width:768px){
-
-.stackly404-box{
-
-padding:35px 25px;
-
+/* Mobile text */
+.mobile-link a{
+    flex:1;
+    color:#fff;
+    text-decoration:none;
+    padding:18px 22px;
+    font-size:14px;
+    font-weight:600;
 }
 
-.stackly404-box h1{
-
-font-size:100px;
-
+/* Arrow */
+.dropdown-toggle{
+    width:55px;
+    text-align:center;
+    cursor:pointer;
+    color:#fff;
+    font-size:14px;
 }
 
-.stackly404-box h2{
+/* Dropdown */
+.dropdown-menu{
+    position:static;
+    display:none;
+    box-shadow:none;
+    background:#24183d;
+}
 
-font-size:30px;
+/* Open dropdown */
+.dropdown.open .dropdown-menu{
+    display:block;
+}
 
+.dropdown-menu li a{
+    padding:15px 35px;
+}
+
+/* Normal menu items */
+.nav-links>li:not(.dropdown)>a{
+    display:block;
+    padding:18px 22px;
 }
 
 }
+@media(max-width:991px){
 
+/* Header */
+.navbar{
+    padding:0 20px;
+}
+
+/* Hamburger */
+.hamburger{
+    display:flex;
+}
+
+/* Hide desktop icons */
+.icons{
+    display:none;
+}
+
+/* Mobile Menu */
+nav{
+    position:fixed;
+    top:90px;
+    right:-100%;
+    width:290px;
+    height:calc(100vh - 90px);
+    background:#18122a;
+    transition:.35s;
+    overflow-y:auto;
+}
+
+nav.show{
+    right:0;
+}
+
+/* Menu */
+.nav-links{
+    flex-direction:column;
+    gap:0;
+}
+
+.nav-links>li::after{
+    display:none;
+}
+
+/* Hide desktop dropdown link */
+.desktop-link{
+    display:none !important;
+}
+
+/* Show mobile version */
+.mobile-link{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.mobile-link a{
+    flex:1;
+    color:#fff;
+    text-decoration:none;
+    padding:18px 22px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.dropdown-toggle{
+    width:55px;
+    text-align:center;
+    cursor:pointer;
+    font-size:15px;
+    color:#fff;
+}
+
+/* Dropdown */
+.dropdown-menu{
+    position:static;
+    display:none;
+    background:#24183d;
+    box-shadow:none;
+}
+
+.dropdown.open .dropdown-menu{
+    display:block;
+}
+
+.dropdown-menu li a{
+    display:block;
+    padding:15px 40px;
+}
+
+/* Normal links */
+.nav-links>li:not(.dropdown)>a{
+    display:block;
+    padding:18px 22px;
+}
+
+/* ==========================
+   Mobile Icons
+========================== */
+
+.mobile-icons{
+    display:flex;
+    flex-direction:column;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:15px;
+    padding-top:15px;
+}
+
+.mobile-icons a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:16px 22px;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.mobile-icons a:hover{
+    background:#24183d;
+}
+
+.mobile-icons i{
+    width:22px;
+    text-align:center;
+    font-size:18px;
+}
+
+.mobile-icons span{
+    font-size:14px;
+    font-weight:500;
+}
+
+}
 </style>
-
 </head>
-
 <body>
 
-<section class="stackly404-section">
+<header id="header">
+<div class="navbar">
 
-<div class="stackly404-glow"></div>
+    <!-- Logo -->
+    <div class="logo">
+        <img src="logo.webp" alt="Stackly Logo">
+    </div>
 
-<div class="stackly404-box">
+    <!-- Navigation -->
+    <nav id="nav">
+        <ul class="nav-links">
 
-<h1>404</h1>
+            <!-- Home -->
+            <li class="active">
+                <a href="home.html">HOME</a>
+            </li>
 
-<h2>Oops! Page Not Found</h2>
+            <!-- Services -->
+            <li class="dropdown">
 
-<p>
+                <!-- Desktop -->
+                <a href="service.html" class="desktop-link">
+                    SERVICES
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
 
-The page you requested could not be found.
+                <!-- Mobile -->
+                <div class="mobile-link">
 
-</p>
+                    <a href="service.html">
+                        SERVICES
+                    </a>
 
-<div class="stackly404-buttons">
+                    <span class="dropdown-toggle">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
 
-<button id="stacklyGoBack">
+                </div>
 
-<i class="fa-solid fa-arrow-left"></i>
+                <ul class="dropdown-menu">
+                    <li><a href="404.html">Repair</a></li>
+                    <li><a href="404.html">Warranty</a></li>
+                    <li><a href="404.html">Complaint</a></li>
+                </ul>
 
-Go Back
+            </li>
 
-</button>
+            <!-- Games -->
+            <li class="dropdown">
 
-<a href="index.html">
+                <!-- Desktop -->
+                <a href="Games.html" class="desktop-link">
+                    GAMES
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
 
-<i class="fa-solid fa-house"></i>
+                <!-- Mobile -->
+                <div class="mobile-link">
 
-Home
+                    <a href="Games.html">
+                        GAMES
+                    </a>
 
-</a>
+                    <span class="dropdown-toggle">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+
+                </div>
+
+                <ul class="dropdown-menu">
+                    <li><a href="404.html">Ghost Hunter</a></li>
+                    <li><a href="404.html">HANA MONTANA</a></li>
+                    <li><a href="404.html">Cricket</a></li>
+                </ul>
+
+            </li>
+
+            <!-- Blog -->
+            <li>
+                <a href="blog.html">BLOG</a>
+            </li>
+
+            <!-- Contact -->
+            <li>
+                <a href="contact.html">CONTACT</a>
+            </li>
+
+        </ul>
+        <div class="mobile-icons">
+
+    <a href="login.html">
+        <i class="fa-regular fa-user"></i>
+        <span>Login</span>
+    </a>
+
+    <a href="404.html">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search</span>
+    </a>
+
+    <a href="404.html">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Cart</span>
+    </a>
 
 </div>
+    </nav>
+
+    <!-- Icons -->
+    <div class="icons">
+
+        <a href="login.html">
+            <i class="fa-regular fa-user"></i>
+        </a>
+
+        <a href="404.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="404.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
 </div>
+</header>
 
-</section>
 
-<script>
 
-document.getElementById("stacklyGoBack").addEventListener("click",function(){
+<script>const burger = document.getElementById("burger");
+const nav = document.getElementById("nav");
+const header = document.getElementById("header");
 
-const previous=sessionStorage.getItem("previousPage");
+// ===============================
+// Hamburger
+// ===============================
+burger.addEventListener("click", () => {
+    nav.classList.toggle("show");
+});
 
-if(previous){
+// ===============================
+// Mobile Dropdown
+// ===============================
+document.querySelectorAll(".dropdown-toggle").forEach(btn => {
 
-window.location.href=previous;
+    btn.addEventListener("click", function (e) {
 
-}else if(history.length>1){
+        if (window.innerWidth > 991) return;
 
-history.back();
+        e.preventDefault();
+        e.stopPropagation();
 
-}else{
+        const dropdown = this.closest(".dropdown");
 
-window.location.href="index.html";
+        // Close all other dropdowns
+        document.querySelectorAll(".dropdown").forEach(item => {
 
-}
+            if (item !== dropdown) {
+                item.classList.remove("open");
+            }
+
+        });
+
+        // Open / Close current
+        dropdown.classList.toggle("open");
+
+    });
 
 });
 
-</script>
+// ===============================
+// Close Menu After Clicking
+// Normal Links Only
+// ===============================
+document.querySelectorAll(".nav-links > li:not(.dropdown) a").forEach(link => {
 
-</body>
+    link.addEventListener("click", () => {
 
-</html>
+        if (window.innerWidth <= 991) {
+            nav.classList.remove("show");
+        }
+
+    });
+
+});
+
+// ===============================
+// Reset
+// ===============================
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 991) {
+
+        nav.classList.remove("show");
+
+        document.querySelectorAll(".dropdown").forEach(item => {
+            item.classList.remove("open");
+        });
+
+    }
+
+});
+
+// ===============================
+// Sticky Header
+// ===============================
+window.addEventListener("scroll", () => {
+
+    header.classList.toggle("scrolled", window.scrollY > 20);
+
+});</script>

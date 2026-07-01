@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>404 - Page Not Found</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Oxanium',sans-serif;
+}
+
+body{
+background:#050505;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+color:#fff;
+}
+
+.stackly404-section{
+
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+padding:20px;
+
+}
+
+.stackly404-glow{
+
+position:absolute;
+width:550px;
+height:550px;
+border-radius:50%;
+background:radial-gradient(circle,
+rgba(255,0,0,.25),
+transparent);
+
+filter:blur(80px);
+
+animation:float 6s infinite ease-in-out;
+
+}
+
+.stackly404-box{
+
+position:relative;
+
+z-index:2;
+
+background:#111;
+
+padding:60px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.08);
+
+width:700px;
+
+max-width:100%;
+
+text-align:center;
+
+box-shadow:0 0 40px rgba(255,0,0,.15);
+
+}
+
+.stackly404-box h1{
+
+font-size:160px;
+
+line-height:1;
+
+color:#ff2020;
+
+}
+
+.stackly404-box h2{
+
+font-size:40px;
+
+margin:20px 0;
+
+}
+
+.stackly404-box p{
+
+color:#aaa;
+
+line-height:1.8;
+
+margin-bottom:40px;
+
+}
+
+.stackly404-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.stackly404-buttons button,
+.stackly404-buttons a{
+
+padding:16px 40px;
+
+border:none;
+
+outline:none;
+
+cursor:pointer;
+
+border-radius:50px;
+
+font-size:16px;
+
+font-weight:700;
+
+text-decoration:none;
+
+background:linear-gradient(90deg,#ff2020,#850000);
+
+color:#fff;
+
+transition:.35s;
+
+}
+
+.stackly404-buttons button:hover,
+.stackly404-buttons a:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 0 25px rgba(255,0,0,.35);
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-25px);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.stackly404-box{
+
+padding:35px 25px;
+
+}
+
+.stackly404-box h1{
+
+font-size:100px;
+
+}
+
+.stackly404-box h2{
+
+font-size:30px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="stackly404-section">
+
+<div class="stackly404-glow"></div>
+
+<div class="stackly404-box">
+
+<h1>404</h1>
+
+<h2>Oops! Page Not Found</h2>
+
+<p>
+
+The page you requested could not be found.
+
+</p>
+
+<div class="stackly404-buttons">
+
+<button id="stacklyGoBack">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Go Back
+
+</button>
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+document.getElementById("stacklyGoBack").addEventListener("click",function(){
+
+const previous=sessionStorage.getItem("previousPage");
+
+if(previous){
+
+window.location.href=previous;
+
+}else if(history.length>1){
+
+history.back();
+
+}else{
+
+window.location.href="index.html";
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>

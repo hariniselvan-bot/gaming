@@ -1,0 +1,2197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stackly Developer Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="developer-dashboard.css">
+
+</head>
+
+<body>
+
+<!--=========================
+    MOBILE MENU
+==========================-->
+
+<div class="stackly-dev-menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+<!--=========================
+      SIDEBAR
+==========================-->
+
+<aside class="stackly-dev-sidebar">
+
+<div class="stackly-dev-logo">
+
+<h2>STACKLY</h2>
+
+<span>DEVELOPER PANEL</span>
+
+</div>
+
+<ul>
+
+<li class="active">
+
+<a href="developerdashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+
+<div class="stackly-dev-sidebar-bottom">
+
+<a href="login.html">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back To Login
+
+</a>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</div>
+
+</aside>
+
+<!--=========================
+        MAIN
+==========================-->
+
+<main class="stackly-dev-main">
+
+<!--=========================
+        HEADER
+==========================-->
+
+<header class="stackly-dev-header">
+
+<h2>
+
+Developer Workspace 💻
+
+</h2>
+
+<div class="stackly-dev-header-right">
+
+<div class="stackly-dev-search">
+
+<input
+type="text"
+placeholder="Search Project...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="stackly-dev-notification">
+
+<i class="fa-regular fa-bell"></i>
+
+<span>5</span>
+
+</div>
+
+<div class="stackly-dev-profile">
+
+<img src="gamer3.webp" alt="Developer">
+
+<div>
+
+<h4>developer</h4>
+
+<p>gaming Developer</p>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!--=========================
+        HERO
+==========================-->
+
+<section class="stackly-dev-hero">
+
+<div class="stackly-dev-left">
+
+<h1>
+
+Hello,
+
+<span>Developer</span>
+
+</h1>
+
+<p>
+
+Welcome back to your workspace. Track projects, resolve bugs, monitor repositories, and collaborate with your team efficiently.
+
+</p>
+
+<div class="stackly-dev-buttons">
+
+<a href="404.html">
+
+New Project
+
+</a>
+
+<a href="404.html">
+
+View Repository
+
+</a>
+
+</div>
+
+</div>
+
+<div class="stackly-dev-right">
+
+<img
+src="gamer1.webp"
+alt="Developer Illustration">
+
+</div>
+
+</section>
+<!--=========================
+      ANALYTICS CARDS
+==========================-->
+
+<section class="stackly-dev-stats">
+
+<div class="stackly-dev-stat-card">
+
+<i class="fa-solid fa-folder-open"></i>
+
+<h2 class="counter" data-target="18">0</h2>
+
+<p>Projects</p>
+
+</div>
+
+<div class="stackly-dev-stat-card">
+
+<i class="fa-brands fa-github"></i>
+
+<h2 class="counter" data-target="126">0</h2>
+
+<p>Commits</p>
+
+</div>
+
+<div class="stackly-dev-stat-card">
+
+<i class="fa-solid fa-code-branch"></i>
+
+<h2 class="counter" data-target="34">0</h2>
+
+<p>Repositories</p>
+
+</div>
+
+<div class="stackly-dev-stat-card">
+
+<i class="fa-solid fa-bug"></i>
+
+<h2 class="counter" data-target="9">0</h2>
+
+<p>Open Bugs</p>
+
+</div>
+
+</section>
+
+<!--=========================
+    PROJECTS + TASKS
+==========================-->
+
+<section class="stackly-dev-grid">
+
+<!-- PROJECTS -->
+
+<div class="stackly-dev-card">
+
+<div class="stackly-dev-card-title">
+
+<h3>Recent Projects</h3>
+
+<a href="#">View All</a>
+
+</div>
+
+<div class="stackly-project-item">
+
+<div>
+
+<h4>Stackly Website</h4>
+
+<p>HTML • CSS • JavaScript</p>
+
+</div>
+
+<span>95%</span>
+
+</div>
+
+<div class="stackly-project-progress">
+
+<div style="width:95%;"></div>
+
+</div>
+
+<div class="stackly-project-item">
+
+<div>
+
+<h4>Portfolio Design</h4>
+
+<p>React • CSS</p>
+
+</div>
+
+<span>80%</span>
+
+</div>
+
+<div class="stackly-project-progress">
+
+<div style="width:80%;"></div>
+
+</div>
+
+<div class="stackly-project-item">
+
+<div>
+
+<h4>Gaming Dashboard</h4>
+
+<p>HTML • CSS</p>
+
+</div>
+
+<span>70%</span>
+
+</div>
+
+<div class="stackly-project-progress">
+
+<div style="width:70%;"></div>
+
+</div>
+
+</div>
+
+<!-- TASKS -->
+
+<div class="stackly-dev-card">
+
+<div class="stackly-dev-card-title">
+
+<h3>Today's Tasks</h3>
+
+</div>
+
+<div class="stackly-task">
+
+<input type="checkbox" checked>
+
+<span>Fix Login Page</span>
+
+</div>
+
+<div class="stackly-task">
+
+<input type="checkbox">
+
+<span>Create Dashboard UI</span>
+
+</div>
+
+<div class="stackly-task">
+
+<input type="checkbox">
+
+<span>Push Code to GitHub</span>
+
+</div>
+
+<div class="stackly-task">
+
+<input type="checkbox" checked>
+
+<span>Deploy Website</span>
+
+</div>
+
+<div class="stackly-task">
+
+<input type="checkbox">
+
+<span>Update Documentation</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=========================
+      GITHUB ACTIVITY
+==========================-->
+
+<section class="stackly-dev-card">
+
+<div class="stackly-dev-card-title">
+
+<h3>Git Activity</h3>
+
+<a href="404.html">Today</a>
+
+</div>
+
+<div class="stackly-git-row">
+
+<span>09:00 AM</span>
+
+<p>Initial Commit</p>
+
+</div>
+
+<div class="stackly-git-row">
+
+<span>11:45 AM</span>
+
+<p>Fixed Login Bugs</p>
+
+</div>
+
+<div class="stackly-git-row">
+
+<span>02:20 PM</span>
+
+<p>Updated Dashboard Design</p>
+
+</div>
+
+<div class="stackly-git-row">
+
+<span>04:15 PM</span>
+
+<p>Deployed to Netlify</p>
+
+</div>
+
+</section>
+<!--==================================
+        BUG TRACKER
+===================================-->
+
+<section class="stackly-dev-grid">
+
+<div class="stackly-dev-card">
+
+<div class="stackly-dev-card-title">
+
+<h3>Bug Tracker</h3>
+
+<a href="404.html">View All</a>
+
+</div>
+
+<div class="stackly-bug-item">
+
+<div>
+
+<h4>Login Validation</h4>
+
+<p>High Priority</p>
+
+</div>
+
+<span class="bug-open">
+Open
+</span>
+
+</div>
+
+<div class="stackly-bug-item">
+
+<div>
+
+<h4>Navbar Mobile Issue</h4>
+
+<p>Medium Priority</p>
+
+</div>
+
+<span class="bug-progress">
+In Progress
+</span>
+
+</div>
+
+<div class="stackly-bug-item">
+
+<div>
+
+<h4>Dashboard Animation</h4>
+
+<p>Resolved</p>
+
+</div>
+
+<span class="bug-close">
+Fixed
+</span>
+
+</div>
+
+</div>
+
+<!--=========================
+      TEAM MEMBERS
+==========================-->
+
+<div class="stackly-dev-card">
+
+<div class="stackly-dev-card-title">
+
+<h3>Team Members</h3>
+
+<a href="404.html">View All</a>
+
+</div>
+
+<div class="stackly-team-member">
+
+<img src="gamer1.webp" alt="">
+
+<div>
+
+<h4>Harini</h4>
+
+<p>Frontend Developer</p>
+
+</div>
+
+<span class="online">
+
+Online
+
+</span>
+
+</div>
+
+<div class="stackly-team-member">
+
+<img src="gamer2.webp" alt="">
+
+<div>
+
+<h4>Alex</h4>
+
+<p>Backend Developer</p>
+
+</div>
+
+<span class="offline">
+
+Away
+
+</span>
+
+</div>
+
+<div class="stackly-team-member">
+
+<img src="gamer3.webp" alt="">
+
+<div>
+
+<h4>Sophia</h4>
+
+<p>UI/UX Designer</p>
+
+</div>
+
+<span class="online">
+
+Online
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+      UPCOMING MEETINGS
+===================================-->
+
+<section class="stackly-dev-card">
+
+<div class="stackly-dev-card-title">
+
+<h3>Upcoming Meetings</h3>
+
+<a href="#">Calendar</a>
+
+</div>
+
+<div class="stackly-meeting">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<div>
+
+<h4>UI Design Review</h4>
+
+<p>Today • 03:30 PM</p>
+
+</div>
+
+</div>
+
+<div class="stackly-meeting">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<div>
+
+<h4>Sprint Planning</h4>
+
+<p>Tomorrow • 11:00 AM</p>
+
+</div>
+
+</div>
+
+<div class="stackly-meeting">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<div>
+
+<h4>Client Presentation</h4>
+
+<p>Friday • 04:00 PM</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+        QUICK NOTES
+===================================-->
+
+<section class="stackly-dev-card">
+
+<div class="stackly-dev-card-title">
+
+<h3>Quick Notes</h3>
+
+</div>
+
+<textarea
+placeholder="Write your notes here..."
+rows="6"></textarea>
+
+</section>
+
+<!--==================================
+          FOOTER
+===================================-->
+
+<footer class="stackly-dev-footer">
+
+<p>
+
+© 2026 Stackly Developer Dashboard. All Rights Reserved.
+
+</p>
+
+<div class="stackly-dev-footer-links">
+
+<a href="login.html">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back To Login
+
+</a>
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</div>
+
+</footer>
+
+</main>
+
+<script src="developer-dashboard.js"></script>
+
+<style>
+    /*=========================================
+        RESET
+=========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Oxanium',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0a0a0a;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+ul{
+    list-style:none;
+}
+
+/*=========================================
+      SCROLLBAR
+=========================================*/
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff2b2b;
+    border-radius:20px;
+}
+
+/*=========================================
+      MOBILE MENU
+=========================================*/
+
+.stackly-dev-menu-btn{
+
+    position:fixed;
+
+    top:20px;
+
+    left:20px;
+
+    width:52px;
+
+    height:52px;
+
+    background:#171717;
+
+    border:1px solid rgba(255,0,0,.25);
+
+    border-radius:12px;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    z-index:1200;
+
+    transition:.35s;
+
+}
+
+.stackly-dev-menu-btn:hover{
+
+    background:#ff2020;
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 20px rgba(255,0,0,.45);
+
+}
+
+/*=========================================
+      SIDEBAR
+=========================================*/
+
+.stackly-dev-sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:280px;
+
+    height:100vh;
+
+    background:#121212;
+
+    border-right:1px solid rgba(255,0,0,.12);
+
+    padding:30px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    transition:.4s;
+
+    z-index:1000;
+
+}
+
+/*=========================================
+      LOGO
+=========================================*/
+
+.stackly-dev-logo{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.stackly-dev-logo h2{
+
+    color:#ff2b2b;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+.stackly-dev-logo span{
+
+    display:block;
+
+    color:#888;
+
+    margin-top:6px;
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+}
+
+/*=========================================
+      MENU
+=========================================*/
+
+.stackly-dev-sidebar ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.stackly-dev-sidebar ul li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    color:#cfcfcf;
+
+    transition:.35s;
+
+    font-weight:600;
+
+}
+
+.stackly-dev-sidebar ul li a i{
+
+    width:22px;
+
+    text-align:center;
+
+    color:#ff3030;
+
+}
+
+.stackly-dev-sidebar ul li:hover a{
+
+    background:#1a1a1a;
+
+    transform:translateX(8px);
+
+    color:#fff;
+
+}
+
+.stackly-dev-sidebar ul li.active a{
+
+    background:linear-gradient(90deg,#ff2020,#770000);
+
+    color:#fff;
+
+    box-shadow:0 0 20px rgba(255,0,0,.25);
+
+}
+
+/*=========================================
+      SIDEBAR BUTTONS
+=========================================*/
+
+.stackly-dev-sidebar-bottom{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.stackly-dev-sidebar-bottom a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.stackly-dev-sidebar-bottom a:first-child{
+
+    background:#1a1a1a;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.stackly-dev-sidebar-bottom a:last-child{
+
+    background:linear-gradient(90deg,#ff2020,#8a0000);
+
+}
+
+.stackly-dev-sidebar-bottom a:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 25px rgba(255,0,0,.35);
+
+}
+
+/*=========================================
+      MAIN
+=========================================*/
+
+.stackly-dev-main{
+
+    margin-left:280px;
+
+    min-height:100vh;
+
+    padding:35px;
+
+}
+
+/*=========================================
+      MOBILE
+=========================================*/
+
+@media(max-width:991px){
+
+.stackly-dev-menu-btn{
+
+display:flex;
+
+}
+
+.stackly-dev-sidebar{
+
+left:-300px;
+
+}
+
+.stackly-dev-sidebar.active{
+
+left:0;
+
+}
+
+.stackly-dev-main{
+
+margin-left:0;
+
+padding:90px 20px 30px;
+
+}
+
+}/*=========================================
+        HEADER
+=========================================*/
+
+.stackly-dev-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    margin-bottom:40px;
+}
+
+.stackly-dev-header h2{
+    font-size:34px;
+    font-weight:800;
+    color:#fff;
+}
+
+/*=========================================
+        HEADER RIGHT
+=========================================*/
+
+.stackly-dev-header-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+/*=========================================
+        SEARCH BOX
+=========================================*/
+
+.stackly-dev-search{
+    position:relative;
+}
+
+.stackly-dev-search input{
+    width:320px;
+    height:55px;
+    padding:0 55px 0 20px;
+    background:#171717;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:50px;
+    outline:none;
+    transition:.35s;
+}
+
+.stackly-dev-search input::placeholder{
+    color:#888;
+}
+
+.stackly-dev-search input:focus{
+    border-color:#ff3030;
+    box-shadow:0 0 20px rgba(255,0,0,.25);
+}
+
+.stackly-dev-search i{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#ff3030;
+}
+
+/*=========================================
+        NOTIFICATION
+=========================================*/
+
+.stackly-dev-notification{
+    position:relative;
+    width:55px;
+    height:55px;
+    background:#171717;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.stackly-dev-notification:hover{
+    background:#ff2020;
+    transform:translateY(-3px);
+}
+
+.stackly-dev-notification i{
+    font-size:20px;
+}
+
+.stackly-dev-notification span{
+    position:absolute;
+    top:6px;
+    right:5px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#ff2020;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:11px;
+    font-weight:700;
+}
+
+/*=========================================
+        PROFILE
+=========================================*/
+
+.stackly-dev-profile{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:8px 18px;
+    background:#171717;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.stackly-dev-profile:hover{
+    box-shadow:0 0 20px rgba(255,0,0,.25);
+}
+
+.stackly-dev-profile img{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #ff2020;
+}
+
+.stackly-dev-profile h4{
+    font-size:17px;
+    margin-bottom:4px;
+}
+
+.stackly-dev-profile p{
+    font-size:13px;
+    color:#999;
+}
+
+/*=========================================
+            HERO
+=========================================*/
+
+.stackly-dev-hero{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:40px;
+    align-items:center;
+    background:linear-gradient(135deg,#181818,#0e0e0e);
+    border:1px solid rgba(255,0,0,.10);
+    border-radius:25px;
+    padding:50px;
+    margin-bottom:40px;
+    position:relative;
+    overflow:hidden;
+}
+
+.stackly-dev-hero::before{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    background:rgba(255,0,0,.08);
+    border-radius:50%;
+    top:-80px;
+    right:-80px;
+    filter:blur(40px);
+}
+
+/*=========================================
+        HERO LEFT
+=========================================*/
+
+.stackly-dev-left{
+    position:relative;
+    z-index:2;
+}
+
+.stackly-dev-left h1{
+    font-size:60px;
+    line-height:1.2;
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.stackly-dev-left h1 span{
+    color:#ff3030;
+}
+
+.stackly-dev-left p{
+    max-width:550px;
+    line-height:1.8;
+    color:#b5b5b5;
+    margin-bottom:35px;
+}
+
+/*=========================================
+        BUTTONS
+=========================================*/
+
+.stackly-dev-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.stackly-dev-buttons a{
+    padding:16px 34px;
+    border-radius:50px;
+    font-weight:700;
+    transition:.35s;
+}
+
+.stackly-dev-buttons a:first-child{
+    background:linear-gradient(90deg,#ff2020,#880000);
+}
+
+.stackly-dev-buttons a:last-child{
+    background:#1b1b1b;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.stackly-dev-buttons a:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 25px rgba(255,0,0,.35);
+}
+
+/*=========================================
+        HERO IMAGE
+=========================================*/
+
+.stackly-dev-right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.stackly-dev-right img{
+    width:100%;
+    max-width:420px;
+    animation:stacklyDevFloat 4s ease-in-out infinite;
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:991px){
+
+.stackly-dev-header{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.stackly-dev-header-right{
+    width:100%;
+    flex-wrap:wrap;
+}
+
+.stackly-dev-search{
+    width:100%;
+}
+
+.stackly-dev-search input{
+    width:100%;
+}
+
+.stackly-dev-profile{
+    width:100%;
+}
+
+.stackly-dev-hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:35px 25px;
+}
+
+.stackly-dev-left p{
+    margin:auto auto 30px;
+}
+
+.stackly-dev-buttons{
+    justify-content:center;
+}
+
+.stackly-dev-right{
+    margin-top:20px;
+}
+
+.stackly-dev-left h1{
+    font-size:42px;
+}
+
+}
+
+@media(max-width:576px){
+
+.stackly-dev-header h2{
+    font-size:28px;
+}
+
+.stackly-dev-left h1{
+    font-size:32px;
+}
+
+.stackly-dev-buttons a{
+    width:100%;
+    text-align:center;
+}
+
+.stackly-dev-profile{
+    padding:10px;
+}
+
+.stackly-dev-profile img{
+    width:45px;
+    height:45px;
+}
+
+}
+
+/*=========================================
+        FLOAT ANIMATION
+=========================================*/
+
+@keyframes stacklyDevFloat{
+
+0%,100%{
+    transform:translateY(0);
+}
+
+50%{
+    transform:translateY(-18px);
+}
+
+}
+/*=========================================
+        ANALYTICS SECTION
+=========================================*/
+
+.stackly-dev-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:35px;
+}
+
+.stackly-dev-stat-card{
+    background:#151515;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.35s;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+}
+
+.stackly-dev-stat-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,
+    transparent,
+    rgba(255,0,0,.12),
+    transparent);
+    transform:translateX(-100%);
+    transition:.8s;
+}
+
+.stackly-dev-stat-card:hover::before{
+    transform:translateX(100%);
+}
+
+.stackly-dev-stat-card:hover{
+    transform:translateY(-8px);
+    border-color:#ff3030;
+    box-shadow:0 0 30px rgba(255,0,0,.20);
+}
+
+.stackly-dev-stat-card i{
+    font-size:38px;
+    color:#ff3030;
+    margin-bottom:18px;
+}
+
+.stackly-dev-stat-card h2{
+    font-size:38px;
+    margin-bottom:8px;
+    font-weight:800;
+}
+
+.stackly-dev-stat-card p{
+    color:#9c9c9c;
+}
+
+/*=========================================
+        GRID
+=========================================*/
+
+.stackly-dev-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+    margin-bottom:35px;
+}
+
+/*=========================================
+        CARD
+=========================================*/
+
+.stackly-dev-card{
+    background:#151515;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:20px;
+    padding:30px;
+    transition:.35s;
+}
+
+.stackly-dev-card:hover{
+    border-color:#ff3030;
+    transform:translateY(-6px);
+    box-shadow:0 0 30px rgba(255,0,0,.18);
+}
+
+.stackly-dev-card-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.stackly-dev-card-title h3{
+    font-size:24px;
+}
+
+.stackly-dev-card-title a{
+    color:#ff3030;
+    font-size:15px;
+}
+
+.stackly-dev-card-title a:hover{
+    color:#fff;
+}
+
+/*=========================================
+        PROJECT ITEM
+=========================================*/
+
+.stackly-project-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.stackly-project-item h4{
+    margin-bottom:5px;
+    font-size:18px;
+}
+
+.stackly-project-item p{
+    color:#999;
+    font-size:14px;
+}
+
+.stackly-project-item span{
+    color:#ff3030;
+    font-weight:700;
+}
+
+/*=========================================
+        PROJECT BAR
+=========================================*/
+
+.stackly-project-progress{
+    width:100%;
+    height:10px;
+    background:#262626;
+    border-radius:30px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.stackly-project-progress div{
+    height:100%;
+    border-radius:30px;
+    background:linear-gradient(90deg,#ff2020,#800000);
+}
+
+/*=========================================
+        TASKS
+=========================================*/
+
+.stackly-task{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:16px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.stackly-task:last-child{
+    border:none;
+}
+
+.stackly-task input{
+    accent-color:#ff2020;
+    width:18px;
+    height:18px;
+}
+
+.stackly-task span{
+    color:#ddd;
+}
+
+/*=========================================
+        GIT ACTIVITY
+=========================================*/
+
+.stackly-git-row{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    padding:16px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.stackly-git-row:last-child{
+    border:none;
+}
+
+.stackly-git-row span{
+    color:#ff4040;
+    min-width:90px;
+    font-weight:700;
+}
+
+.stackly-git-row p{
+    color:#d6d6d6;
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:1200px){
+
+.stackly-dev-stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.stackly-dev-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+.stackly-dev-stats{
+grid-template-columns:1fr;
+}
+
+.stackly-dev-card{
+padding:22px;
+}
+
+.stackly-dev-card-title{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+}
+
+.stackly-project-item{
+flex-direction:column;
+align-items:flex-start;
+gap:6px;
+}
+
+.stackly-git-row{
+flex-direction:column;
+align-items:flex-start;
+gap:8px;
+}
+
+}/*=========================================
+        BUG TRACKER
+=========================================*/
+
+.stackly-bug-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.stackly-bug-item:last-child{
+    border-bottom:none;
+}
+
+.stackly-bug-item h4{
+    margin-bottom:6px;
+    font-size:18px;
+}
+
+.stackly-bug-item p{
+    color:#9b9b9b;
+    font-size:14px;
+}
+
+.bug-open,
+.bug-progress,
+.bug-close{
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.bug-open{
+    background:#ff2020;
+    color:#fff;
+}
+
+.bug-progress{
+    background:#ff9800;
+    color:#fff;
+}
+
+.bug-close{
+    background:#14b95a;
+    color:#fff;
+}
+
+/*=========================================
+        TEAM MEMBERS
+=========================================*/
+
+.stackly-team-member{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.stackly-team-member:last-child{
+    border-bottom:none;
+}
+
+.stackly-team-member img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #ff3030;
+}
+
+.stackly-team-member h4{
+    margin-bottom:5px;
+}
+
+.stackly-team-member p{
+    color:#9b9b9b;
+    font-size:14px;
+}
+
+.online,
+.offline{
+    margin-left:auto;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.online{
+    background:#14b95a;
+}
+
+.offline{
+    background:#777;
+}
+
+/*=========================================
+        MEETINGS
+=========================================*/
+
+.stackly-meeting{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:20px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.stackly-meeting:last-child{
+    border-bottom:none;
+}
+
+.stackly-meeting i{
+    width:55px;
+    height:55px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:#1d1d1d;
+    color:#ff3030;
+    font-size:22px;
+}
+
+.stackly-meeting h4{
+    margin-bottom:6px;
+}
+
+.stackly-meeting p{
+    color:#999;
+}
+
+/*=========================================
+        NOTES
+=========================================*/
+
+.stackly-dev-card textarea{
+    width:100%;
+    background:#1b1b1b;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:20px;
+    resize:none;
+    outline:none;
+    transition:.35s;
+    font-size:15px;
+}
+
+.stackly-dev-card textarea:focus{
+    border-color:#ff3030;
+    box-shadow:0 0 20px rgba(255,0,0,.25);
+}
+
+.stackly-dev-card textarea::placeholder{
+    color:#888;
+}
+
+/*=========================================
+        FOOTER
+=========================================*/
+
+.stackly-dev-footer{
+    margin-top:50px;
+    padding:35px 0;
+    border-top:1px solid rgba(255,255,255,.08);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.stackly-dev-footer p{
+    color:#888;
+}
+
+.stackly-dev-footer-links{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.stackly-dev-footer-links a{
+    padding:12px 22px;
+    background:#181818;
+    border-radius:30px;
+    transition:.35s;
+}
+
+.stackly-dev-footer-links a:hover{
+    background:#ff2020;
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:1200px){
+
+.stackly-team-member,
+.stackly-bug-item{
+    flex-wrap:wrap;
+}
+
+.online,
+.offline,
+.bug-open,
+.bug-progress,
+.bug-close{
+    margin-left:0;
+    margin-top:10px;
+}
+
+}
+
+@media(max-width:768px){
+
+.stackly-meeting{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.stackly-team-member{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.stackly-bug-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.stackly-dev-footer{
+    flex-direction:column;
+    text-align:center;
+}
+
+.stackly-dev-footer-links{
+    justify-content:center;
+}
+
+}
+
+@media(max-width:480px){
+
+.stackly-dev-footer-links{
+    flex-direction:column;
+    width:100%;
+}
+
+.stackly-dev-footer-links a{
+    width:100%;
+    text-align:center;
+}
+
+.stackly-dev-card{
+    padding:18px;
+}
+
+.stackly-dev-card-title h3{
+    font-size:20px;
+}
+
+.stackly-team-member img{
+    width:48px;
+    height:48px;
+}
+
+.stackly-meeting i{
+    width:48px;
+    height:48px;
+    font-size:18px;
+}
+
+}
+</style>
+<script>
+//======================================
+// STACKLY DEVELOPER DASHBOARD
+//======================================
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+/*======================================
+      MOBILE SIDEBAR
+======================================*/
+
+const menu=document.querySelector(".stackly-dev-menu-btn");
+const sidebar=document.querySelector(".stackly-dev-sidebar");
+
+if(menu){
+
+menu.addEventListener("click",()=>{
+
+sidebar.classList.toggle("active");
+
+});
+
+}
+
+/*======================================
+      CLOSE SIDEBAR
+======================================*/
+
+document.addEventListener("click",(e)=>{
+
+if(window.innerWidth<=991){
+
+if(
+!sidebar.contains(e.target) &&
+!menu.contains(e.target)
+){
+
+sidebar.classList.remove("active");
+
+}
+
+}
+
+});
+
+/*======================================
+      ACTIVE MENU
+======================================*/
+
+const links=document.querySelectorAll(".stackly-dev-sidebar ul li");
+
+links.forEach(item=>{
+
+item.addEventListener("click",()=>{
+
+links.forEach(i=>i.classList.remove("active"));
+
+item.classList.add("active");
+
+});
+
+});
+
+/*======================================
+      COUNTER
+======================================*/
+
+const counters=document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+const target=+counter.dataset.target;
+
+let current=0;
+
+const speed=Math.max(1,target/120);
+
+function update(){
+
+current+=speed;
+
+if(current<target){
+
+counter.innerHTML=Math.floor(current).toLocaleString();
+
+requestAnimationFrame(update);
+
+}else{
+
+counter.innerHTML=target.toLocaleString();
+
+}
+
+}
+
+update();
+
+});
+
+/*======================================
+      PROJECT BARS
+======================================*/
+
+const bars=document.querySelectorAll(".stackly-project-progress div");
+
+bars.forEach(bar=>{
+
+const width=bar.style.width;
+
+bar.style.width="0";
+
+setTimeout(()=>{
+
+bar.style.transition="1.5s ease";
+
+bar.style.width=width;
+
+},300);
+
+});
+
+/*======================================
+      SCROLL ANIMATION
+======================================*/
+
+const cards=document.querySelectorAll(
+
+".stackly-dev-stat-card,.stackly-dev-card"
+
+);
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+},{
+threshold:.2
+});
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+card.style.transform="translateY(60px)";
+card.style.transition=".8s ease";
+
+observer.observe(card);
+
+});
+
+/*======================================
+      CARD HOVER
+======================================*/
+
+cards.forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.transform="translateY(-8px)";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="translateY(0)";
+
+});
+
+});
+
+/*======================================
+      SEARCH GLOW
+======================================*/
+
+const search=document.querySelector(".stackly-dev-search input");
+
+if(search){
+
+search.addEventListener("focus",()=>{
+
+search.style.boxShadow="0 0 25px rgba(255,0,0,.35)";
+
+});
+
+search.addEventListener("blur",()=>{
+
+search.style.boxShadow="none";
+
+});
+
+}
+
+/*======================================
+      NOTIFICATION
+======================================*/
+
+const badge=document.querySelector(".stackly-dev-notification span");
+
+if(badge){
+
+setInterval(()=>{
+
+badge.animate([
+
+{transform:"scale(1)"},
+
+{transform:"scale(1.35)"},
+
+{transform:"scale(1)"}
+
+],{
+
+duration:700
+
+});
+
+},2500);
+
+}
+
+/*======================================
+      HERO FLOAT
+======================================*/
+
+const hero=document.querySelector(".stackly-dev-right img");
+
+if(hero){
+
+hero.animate([
+
+{transform:"translateY(0)"},
+
+{transform:"translateY(-15px)"},
+
+{transform:"translateY(0)"}
+
+],{
+
+duration:3500,
+
+iterations:Infinity
+
+});
+
+}
+
+/*======================================
+      NOTES AUTO HEIGHT
+======================================*/
+
+const textarea=document.querySelector("textarea");
+
+if(textarea){
+
+textarea.addEventListener("input",function(){
+
+this.style.height="auto";
+
+this.style.height=this.scrollHeight+"px";
+
+});
+
+}
+
+/*======================================
+      BUTTON RIPPLE
+======================================*/
+
+document.querySelectorAll(
+".stackly-dev-buttons a,.stackly-dev-footer-links a"
+).forEach(button=>{
+
+button.addEventListener("mouseenter",()=>{
+
+button.style.transform="translateY(-4px)";
+
+});
+
+button.addEventListener("mouseleave",()=>{
+
+button.style.transform="translateY(0)";
+
+});
+
+});
+
+});
+</script>

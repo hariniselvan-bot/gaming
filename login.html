@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stackly Login</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+<section class="stackly-login-section">
+
+<div class="stackly-login-overlay"></div>
+
+<div class="stackly-login-bg-text">
+LOGIN
+</div>
+
+<div class="stackly-login-container">
+
+<!-- LEFT SIDE -->
+
+<div class="stackly-login-left">
+
+<span class="stackly-login-badge">
+<i class="fa-solid fa-circle"></i>
+Welcome Back
+</span>
+
+<h1>
+Sign In To<br>
+Your Account
+</h1>
+
+<p>
+
+Choose your role and continue to your personalized dashboard.
+
+</p>
+
+<div class="stackly-login-feature">
+
+<div class="stackly-login-icon">
+<i class="fa-solid fa-gamepad"></i>
+</div>
+
+<div>
+<h4>Gaming Dashboard</h4>
+<p>Exclusive gamer experience.</p>
+</div>
+
+</div>
+
+<div class="stackly-login-feature">
+
+<div class="stackly-login-icon">
+<i class="fa-solid fa-code"></i>
+</div>
+
+<div>
+<h4>Developer Dashboard</h4>
+<p>Manage your development projects.</p>
+</div>
+
+</div>
+
+<a href="home.html" class="stackly-home-btn">
+
+<i class="fa-solid fa-house"></i>
+
+Back To Home
+
+</a>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div class="stackly-login-right">
+
+<form class="stackly-login-form">
+
+<h2>Login</h2>
+
+<select
+id="stacklyRole"
+required>
+
+<option value="">
+Select Your Role
+</option>
+
+<option value="gamer">
+🎮 Gamer
+</option>
+
+<option value="developer">
+💻 Developer
+</option>
+
+</select>
+
+<input
+type="text"
+placeholder="Username"
+required>
+
+<div class="stackly-password-box">
+
+<input
+type="password"
+id="stacklyPassword"
+placeholder="Password"
+required>
+
+<i
+class="fa-solid fa-eye"
+id="togglePassword">
+</i>
+
+</div>
+
+<button type="submit">
+
+LOGIN
+
+</button>
+
+<div class="stackly-extra-links">
+
+<a href="404.html">
+
+Forgot Password?
+
+</a>
+
+<a href="signup.html">
+
+CREATE ACCOUNT
+</a>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="login.js"></script>
+
+<style>
+    /*==============================
+ GOOGLE FONT
+==============================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Oxanium',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#060606;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/*==============================
+ LOGIN SECTION
+==============================*/
+
+.stackly-login-section{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:90px 8%;
+    overflow:hidden;
+    background:#050505;
+}
+
+/*==============================
+ BACKGROUND
+==============================*/
+
+.stackly-login-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,0,0,.15),
+    transparent 45%),
+
+    radial-gradient(circle at bottom right,
+    rgba(180,0,0,.12),
+    transparent 40%),
+
+    linear-gradient(180deg,#090909,#050505);
+
+    z-index:0;
+}
+
+/*==============================
+ BIG LOGIN TEXT
+==============================*/
+
+.stackly-login-bg-text{
+
+    position:absolute;
+
+    top:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:170px;
+
+    font-weight:800;
+
+    color:rgba(255,255,255,.03);
+
+    letter-spacing:10px;
+
+    user-select:none;
+
+    z-index:1;
+
+}
+
+/*==============================
+ CONTAINER
+==============================*/
+
+.stackly-login-container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:1250px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+/*==============================
+ LEFT
+==============================*/
+
+.stackly-login-left{
+
+    animation:stacklyLeft 1s ease;
+
+}
+
+.stackly-login-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    background:#111;
+
+    border:1px solid rgba(255,0,0,.25);
+
+    margin-bottom:30px;
+
+}
+
+.stackly-login-badge i{
+
+    color:#ff2020;
+
+    font-size:10px;
+
+}
+
+.stackly-login-left h1{
+
+    font-size:58px;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+    font-weight:800;
+
+}
+
+.stackly-login-left p{
+
+    color:#b8b8b8;
+
+    line-height:1.8;
+
+    max-width:500px;
+
+    margin-bottom:45px;
+
+}
+
+/*==============================
+ FEATURES
+==============================*/
+
+.stackly-login-feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:16px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    transition:.35s;
+
+}
+
+.stackly-login-feature:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#ff3030;
+
+    box-shadow:0 0 25px rgba(255,0,0,.18);
+
+}
+
+.stackly-login-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:14px;
+
+    background:#191919;
+
+    border:1px solid rgba(255,0,0,.25);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.stackly-login-icon i{
+
+    color:#ff2f2f;
+
+    font-size:22px;
+
+}
+
+.stackly-login-feature h4{
+
+    margin-bottom:5px;
+
+    font-size:18px;
+
+}
+
+.stackly-login-feature p{
+
+    margin:0;
+
+    color:#9d9d9d;
+
+}
+
+/*==============================
+ HOME BUTTON
+==============================*/
+
+.stackly-home-btn{
+
+    margin-top:35px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:linear-gradient(90deg,#ff2020,#7a0000);
+
+    padding:16px 32px;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+}
+
+.stackly-home-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 30px rgba(255,0,0,.35);
+
+}
+
+/*==============================
+ RIGHT
+==============================*/
+
+.stackly-login-right{
+
+    animation:stacklyRight 1s ease;
+
+}
+
+.stackly-login-form{
+
+    background:rgba(17,17,17,.92);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:45px;
+
+    box-shadow:0 0 40px rgba(255,0,0,.12);
+
+}
+
+.stackly-login-form h2{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+    font-size:34px;
+
+}
+
+/*==============================
+ INPUTS
+==============================*/
+
+.stackly-login-form select,
+.stackly-login-form input{
+
+    width:100%;
+
+    height:62px;
+
+    margin-bottom:20px;
+
+    background:#191919;
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:10px;
+
+    padding:0 18px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.35s;
+
+}
+
+.stackly-login-form select:focus,
+.stackly-login-form input:focus{
+
+    border-color:#ff3030;
+
+    box-shadow:0 0 18px rgba(255,0,0,.25);
+
+}
+
+/*==============================
+ PASSWORD
+==============================*/
+
+.stackly-password-box{
+
+    position:relative;
+
+}
+
+.stackly-password-box i{
+
+    position:absolute;
+
+    right:18px;
+
+    top:22px;
+
+    color:#bdbdbd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.stackly-password-box i:hover{
+
+    color:#ff4040;
+
+}
+
+/*==============================
+ LOGIN BUTTON
+==============================*/
+
+.stackly-login-form button{
+
+    width:100%;
+
+    height:62px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:10px;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    background:linear-gradient(90deg,#ff1d1d,#8d0000);
+
+    transition:.35s;
+
+}
+
+.stackly-login-form button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 35px rgba(255,0,0,.4);
+
+}
+
+/*==============================
+ LINKS
+==============================*/
+
+.stackly-extra-links{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.stackly-extra-links a{
+
+    text-decoration:none;
+
+    color:#d5d5d5;
+
+    transition:.3s;
+
+}
+
+.stackly-extra-links a:hover{
+
+    color:#ff3030;
+
+}
+
+/*==============================
+ RESPONSIVE
+==============================*/
+
+@media(max-width:991px){
+
+.stackly-login-container{
+
+grid-template-columns:1fr;
+
+gap:60px;
+
+}
+
+.stackly-login-bg-text{
+
+font-size:110px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.stackly-login-section{
+
+padding:70px 20px;
+
+}
+
+.stackly-login-bg-text{
+
+display:none;
+
+}
+
+.stackly-login-left h1{
+
+font-size:40px;
+
+}
+
+.stackly-login-form{
+
+padding:30px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.stackly-login-left h1{
+
+font-size:30px;
+
+}
+
+.stackly-home-btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+.stackly-extra-links{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+}
+
+/*==============================
+ ANIMATIONS
+==============================*/
+
+@keyframes stacklyLeft{
+
+from{
+opacity:0;
+transform:translateX(-80px);
+}
+
+to{
+opacity:1;
+transform:translateX(0);
+}
+
+}
+
+@keyframes stacklyRight{
+
+from{
+opacity:0;
+transform:translateX(80px);
+}
+
+to{
+opacity:1;
+transform:translateX(0);
+}
+
+}
+</style>
+<script>
+    // ========================================
+// STACKLY LOGIN PAGE
+// ========================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.querySelector(".stackly-login-form");
+    const role = document.getElementById("stacklyRole");
+    const password = document.getElementById("stacklyPassword");
+    const eye = document.getElementById("togglePassword");
+    const button = form.querySelector("button");
+
+    /*==========================
+        SHOW / HIDE PASSWORD
+    ==========================*/
+
+    eye.addEventListener("click", () => {
+
+        if (password.type === "password") {
+
+            password.type = "text";
+
+            eye.classList.remove("fa-eye");
+            eye.classList.add("fa-eye-slash");
+
+        } else {
+
+            password.type = "password";
+
+            eye.classList.remove("fa-eye-slash");
+            eye.classList.add("fa-eye");
+
+        }
+
+    });
+
+    /*==========================
+        BUTTON EFFECT
+    ==========================*/
+
+    button.addEventListener("mouseenter", () => {
+
+        button.style.transform = "translateY(-4px)";
+
+    });
+
+    button.addEventListener("mouseleave", () => {
+
+        button.style.transform = "translateY(0)";
+
+    });
+
+    /*==========================
+        LOGIN
+    ==========================*/
+
+    form.addEventListener("submit", function(e){
+
+        // Let HTML5 validation work first
+        if(!form.checkValidity()){
+
+            return;
+
+        }
+
+        e.preventDefault();
+
+        button.innerHTML="LOGGING IN...";
+        button.disabled=true;
+
+        setTimeout(()=>{
+
+            if(role.value==="gamer"){
+
+                window.location.href="gamerdashboard.html";
+
+            }
+
+            else if(role.value==="developer"){
+
+                window.location.href="developerdashboard.html";
+
+            }
+
+            else{
+
+                alert("Please select a role.");
+
+                button.innerHTML="LOGIN";
+                button.disabled=false;
+
+            }
+
+        },1200);
+
+    });
+
+    /*==========================
+       INPUT ANIMATION
+    ==========================*/
+
+    const inputs=document.querySelectorAll("input,select");
+
+    inputs.forEach(input=>{
+
+        input.addEventListener("focus",()=>{
+
+            input.style.transform="scale(1.02)";
+
+        });
+
+        input.addEventListener("blur",()=>{
+
+            input.style.transform="scale(1)";
+
+        });
+
+    });
+
+});
+</script>

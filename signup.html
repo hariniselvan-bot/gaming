@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stackly Sign Up</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="signup.css">
+
+</head>
+
+<body>
+
+<section class="stackly-signup-section">
+
+<div class="stackly-signup-overlay"></div>
+
+<div class="stackly-signup-bg-text">
+SIGN UP
+</div>
+
+<div class="stackly-signup-container">
+
+<!--=====================
+        LEFT
+======================-->
+
+<div class="stackly-signup-left">
+
+<span class="stackly-signup-badge">
+
+<i class="fa-solid fa-circle"></i>
+
+Join Stackly
+
+</span>
+
+<h1>
+
+Create Your
+
+<span>Account</span>
+
+</h1>
+
+<p>
+
+Register today and choose your workspace.
+Whether you're a Gamer or Developer,
+your dashboard is waiting for you.
+
+</p>
+
+<div class="stackly-signup-feature">
+
+<div class="stackly-signup-icon">
+
+<i class="fa-solid fa-gamepad"></i>
+
+</div>
+
+<div>
+
+<h4>Gaming Dashboard</h4>
+
+<p>Play, track progress and achievements.</p>
+
+</div>
+
+</div>
+
+<div class="stackly-signup-feature">
+
+<div class="stackly-signup-icon">
+
+<i class="fa-solid fa-code"></i>
+
+</div>
+
+<div>
+
+<h4>Developer Workspace</h4>
+
+<p>Manage projects and repositories.</p>
+
+</div>
+
+</div>
+
+<a href="home.html" class="stackly-home-btn">
+
+<i class="fa-solid fa-house"></i>
+
+Back To Home
+
+</a>
+
+</div>
+
+<!--=====================
+        RIGHT
+======================-->
+
+<div class="stackly-signup-right">
+
+<form class="stackly-signup-form">
+
+<h2>Create Account</h2>
+
+<input
+type="text"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+placeholder="Email Address"
+required>
+
+
+
+<div class="stackly-password-box">
+
+<input
+type="password"
+id="signupPassword"
+placeholder="Password"
+required>
+
+<i
+class="fa-solid fa-eye"
+id="togglePassword">
+
+</i>
+
+</div>
+
+<div class="stackly-password-box">
+
+<i
+class="fa-solid fa-eye"
+id="toggleConfirmPassword">
+
+</i>
+
+</div>
+
+<label class="stackly-checkbox">
+
+<input
+type="checkbox"
+required>
+
+<span>
+
+I agree to the Terms &
+Conditions
+
+</span>
+
+</label>
+
+<button type="submit">
+
+CREATE ACCOUNT
+
+</button>
+
+<div class="stackly-signup-links">
+
+<a href="login.html">
+
+Already have an account?
+
+Login
+
+</a>
+
+<a href="index.html">
+
+Back Home
+
+</a>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="signup.js"></script>
+<style>
+    /*=========================================
+        GOOGLE FONT
+=========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Oxanium',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/*=========================================
+        SIGNUP SECTION
+=========================================*/
+
+.stackly-signup-section{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    padding:90px 8%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:#050505;
+}
+
+/*=========================================
+        BACKGROUND
+=========================================*/
+
+.stackly-signup-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,0,0,.15),
+    transparent 45%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,0,0,.12),
+    transparent 40%),
+
+    linear-gradient(180deg,#090909,#050505);
+
+    z-index:0;
+}
+/*==============================
+    REMOVE LINK UNDERLINE
+==============================*/
+
+.stackly-signup-links a{
+    text-decoration: none;
+    color: #ccc;
+    transition: .3s;
+    font-weight: 500;
+}
+
+.stackly-signup-links a:hover{
+    color: #ff3030;
+    text-decoration: none;
+}
+
+.stackly-signup-links a:visited,
+.stackly-signup-links a:active,
+.stackly-signup-links a:focus{
+    text-decoration: none;
+    color: #ccc;
+}.stackly-signup-links a,
+.stackly-signup-links a:hover,
+.stackly-signup-links a:focus,
+.stackly-signup-links a:active,
+.stackly-signup-links a:visited{
+    text-decoration: none !important;
+}
+.stackly-signup-bg-text{
+
+    position:absolute;
+
+    top:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:170px;
+
+    font-weight:800;
+
+    color:rgba(255,255,255,.03);
+
+    letter-spacing:10px;
+
+    user-select:none;
+
+}
+
+/*=========================================
+        CONTAINER
+=========================================*/
+
+.stackly-signup-container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:1250px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+/*=========================================
+        LEFT SIDE
+=========================================*/
+
+.stackly-signup-left{
+
+    animation:signupLeft .9s ease;
+
+}
+
+.stackly-signup-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    background:#111;
+
+    border:1px solid rgba(255,0,0,.25);
+
+    margin-bottom:30px;
+
+}
+
+.stackly-signup-badge i{
+
+    color:#ff3030;
+
+    font-size:10px;
+
+}
+
+.stackly-signup-left h1{
+
+    font-size:58px;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+    font-weight:800;
+
+}
+
+.stackly-signup-left h1 span{
+
+    color:#ff3030;
+
+}
+
+.stackly-signup-left p{
+
+    color:#bdbdbd;
+
+    line-height:1.8;
+
+    max-width:500px;
+
+    margin-bottom:45px;
+
+}
+
+/*=========================================
+        FEATURES
+=========================================*/
+
+.stackly-signup-feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    margin-bottom:18px;
+
+    transition:.35s;
+
+}
+
+.stackly-signup-feature:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#ff3030;
+
+    box-shadow:0 0 25px rgba(255,0,0,.18);
+
+}
+
+.stackly-signup-icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:14px;
+
+    background:#1b1b1b;
+
+    border:1px solid rgba(255,0,0,.20);
+
+}
+
+.stackly-signup-icon i{
+
+    color:#ff3030;
+
+    font-size:24px;
+
+}
+
+.stackly-signup-feature h4{
+
+    margin-bottom:6px;
+
+    font-size:18px;
+
+}
+
+.stackly-signup-feature p{
+
+    color:#999;
+
+    margin:0;
+
+}
+
+/*=========================================
+        HOME BUTTON
+=========================================*/
+
+.stackly-home-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:35px;
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    background:linear-gradient(90deg,#ff2020,#850000);
+
+    color:#fff;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.stackly-home-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 25px rgba(255,0,0,.35);
+
+}
+
+/*=========================================
+        ANIMATION
+=========================================*/
+
+@keyframes signupLeft{
+
+from{
+
+opacity:0;
+
+transform:translateX(-80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+/*=========================================
+        RIGHT SIDE
+=========================================*/
+
+.stackly-signup-right{
+
+    animation:signupRight .9s ease;
+
+}
+
+.stackly-signup-form{
+
+    background:rgba(17,17,17,.92);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:45px;
+
+    box-shadow:0 0 35px rgba(255,0,0,.12);
+
+}
+
+.stackly-signup-form h2{
+
+    text-align:center;
+
+    font-size:34px;
+
+    margin-bottom:35px;
+
+    font-weight:700;
+
+}
+
+/*=========================================
+        INPUTS
+=========================================*/
+
+.stackly-signup-form input,
+.stackly-signup-form select{
+
+    width:100%;
+
+    height:60px;
+
+    margin-bottom:20px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:10px;
+
+    padding:0 18px;
+
+    background:#1a1a1a;
+
+    color:#fff;
+
+    font-size:15px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.stackly-signup-form input::placeholder{
+
+    color:#999;
+
+}
+
+.stackly-signup-form select{
+
+    cursor:pointer;
+
+}
+
+.stackly-signup-form select option{
+
+    background:#111;
+
+    color:#fff;
+
+}
+
+.stackly-signup-form input:focus,
+.stackly-signup-form select:focus{
+
+    border-color:#ff3030;
+
+    box-shadow:0 0 18px rgba(255,0,0,.25);
+
+}
+
+/*=========================================
+        PASSWORD
+=========================================*/
+
+.stackly-password-box{
+
+    position:relative;
+
+    margin-bottom:20px;
+
+}
+
+.stackly-password-box input{
+
+    margin-bottom:0;
+
+}
+
+.stackly-password-box i{
+
+    position:absolute;
+
+    right:20px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#999;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.stackly-password-box i:hover{
+
+    color:#ff3030;
+
+}
+
+/*=========================================
+        CHECKBOX
+=========================================*/
+
+.stackly-checkbox{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+
+    color:#ccc;
+
+}
+
+.stackly-checkbox input{
+
+    width:18px;
+
+    height:18px;
+
+    accent-color:#ff3030;
+
+    margin:0;
+
+}
+
+.stackly-checkbox span{
+
+    line-height:1.5;
+
+}
+
+/*=========================================
+        BUTTON
+=========================================*/
+
+.stackly-signup-form button{
+
+    width:100%;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    background:linear-gradient(90deg,#ff2020,#850000);
+
+    transition:.35s;
+
+}
+
+.stackly-signup-form button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 25px rgba(255,0,0,.35);
+
+}
+
+/*=========================================
+        LINKS
+=========================================*/
+
+.stackly-signup-links{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.stackly-signup-links a{
+
+    color:#ccc;
+
+    transition:.3s;
+
+}
+
+.stackly-signup-links a:hover{
+
+    color:#ff3030;
+
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:991px){
+
+.stackly-signup-container{
+
+grid-template-columns:1fr;
+
+gap:60px;
+
+}
+
+.stackly-signup-bg-text{
+
+font-size:110px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.stackly-signup-section{
+
+padding:70px 20px;
+
+}
+
+.stackly-signup-bg-text{
+
+display:none;
+
+}
+
+.stackly-signup-left h1{
+
+font-size:40px;
+
+}
+
+.stackly-signup-form{
+
+padding:30px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.stackly-signup-left h1{
+
+font-size:30px;
+
+}
+
+.stackly-home-btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+.stackly-signup-links{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.stackly-signup-form{
+
+padding:25px;
+
+}
+
+}
+
+/*=========================================
+        ANIMATION
+=========================================*/
+
+@keyframes signupRight{
+
+from{
+
+opacity:0;
+
+transform:translateX(80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+</style>
+<script>
+    //==========================================
+// STACKLY SIGNUP PAGE
+//==========================================
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+const form=document.querySelector(".stackly-signup-form");
+
+const role=document.getElementById("stacklySignupRole");
+
+const password=document.getElementById("signupPassword");
+
+const confirmPassword=document.getElementById("confirmPassword");
+
+const togglePassword=document.getElementById("togglePassword");
+
+const toggleConfirm=document.getElementById("toggleConfirmPassword");
+
+const button=form.querySelector("button");
+
+/*==========================================
+      SHOW PASSWORD
+==========================================*/
+
+togglePassword.addEventListener("click",()=>{
+
+if(password.type==="password"){
+
+password.type="text";
+
+togglePassword.classList.remove("fa-eye");
+
+togglePassword.classList.add("fa-eye-slash");
+
+}else{
+
+password.type="password";
+
+togglePassword.classList.remove("fa-eye-slash");
+
+togglePassword.classList.add("fa-eye");
+
+}
+
+});
+
+/*==========================================
+      SHOW CONFIRM PASSWORD
+==========================================*/
+
+toggleConfirm.addEventListener("click",()=>{
+
+if(confirmPassword.type==="password"){
+
+confirmPassword.type="text";
+
+toggleConfirm.classList.remove("fa-eye");
+
+toggleConfirm.classList.add("fa-eye-slash");
+
+}else{
+
+confirmPassword.type="password";
+
+toggleConfirm.classList.remove("fa-eye-slash");
+
+toggleConfirm.classList.add("fa-eye");
+
+}
+
+});
+
+/*==========================================
+      BUTTON EFFECT
+==========================================*/
+
+button.addEventListener("mouseenter",()=>{
+
+button.style.transform="translateY(-4px)";
+
+});
+
+button.addEventListener("mouseleave",()=>{
+
+button.style.transform="translateY(0)";
+
+});
+
+/*==========================================
+      INPUT SCALE
+==========================================*/
+
+document.querySelectorAll("input,select").forEach(input=>{
+
+input.addEventListener("focus",()=>{
+
+input.style.transform="scale(1.02)";
+
+});
+
+input.addEventListener("blur",()=>{
+
+input.style.transform="scale(1)";
+
+});
+
+});
+
+/*==========================================
+      SIGNUP
+==========================================*/
+
+form.addEventListener("submit",(e)=>{
+
+if(!form.checkValidity()){
+
+return;
+
+}
+
+e.preventDefault();
+
+if(password.value!==confirmPassword.value){
+
+alert("Passwords do not match!");
+
+confirmPassword.focus();
+
+return;
+
+}
+
+button.innerHTML="CREATING ACCOUNT...";
+
+button.disabled=true;
+
+setTimeout(()=>{
+
+if(role.value==="gamer"){
+
+window.location.href="gamer-dashboard.html";
+
+}
+
+else if(role.value==="developer"){
+
+window.location.href="developer-dashboard.html";
+
+}
+
+else{
+
+alert("Please select a role.");
+
+button.innerHTML="CREATE ACCOUNT";
+
+button.disabled=false;
+
+}
+
+},1500);
+
+});
+
+});
+</script>
+</body>
+
+</html>

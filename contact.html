@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly Header</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Montserrat,sans-serif}
+body{background:#111;color:#fff}
+header{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(32, 20, 52, 0);backdrop-filter:blur(8px);transition:.35s}
+header.scrolled{background:#18132b}
+.navbar{max-width:1400px;height:90px;margin:auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center}
+.logo img{height:55px}
+.nav-links{display:flex;list-style:none;gap:38px}
+.nav-links>li{position:relative}
+.nav-links>li>a{text-decoration:none;color:#fff;font-size:14px;font-weight:600;letter-spacing:1px;padding:35px 0;display:flex;align-items:center;gap:6px}
+.nav-links>li::after{content:"";position:absolute;left:0;bottom:12px;width:0;height:2px;background:#fff;transition:.35s}
+.nav-links>li:hover::after,
+.nav-links>li.active::after{
+    width:100%;
+}.dropdown-menu{position:absolute;top:100%;left:0;background:#23173b;min-width:220px;display:none;list-style:none;box-shadow:0 20px 35px rgba(0,0,0,.35)}
+.dropdown-menu li a{display:block;padding:14px 18px;color:#fff;text-decoration:none}
+.dropdown-menu li a:hover{background:#332253}
+.dropdown.open .dropdown-menu,.dropdown:hover .dropdown-menu{display:block}
+.icons{display:flex;gap:24px;font-size:18px}
+.icons i{cursor:pointer;transition:.3s}
+.icons i:hover{color:#b08cff}
+.icons{
+    display:flex;
+    gap:24px;
+    font-size:18px;
+}
+
+.icons a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.icons a:hover{
+    color:#b08cff;
+    transform:translateY(-3px);
+}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{width:28px;height:3px;background:#fff;transition:.3s}
+.hero{height:100vh;background:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=80') center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(42,25,70,.6)}
+.hero h1{position:relative;z-index:1;text-align:center;padding-top:45vh;font-size:64px;letter-spacing:8px}
+@media(max-width:991px){
+.hamburger{display:flex}
+.icons{display:none}
+nav{position:fixed;right:-100%;top:90px;width:290px;height:calc(100vh - 90px);background:#18122a;transition:.35s;overflow:auto}
+nav.show{right:0}
+.nav-links{flex-direction:column;gap:0}
+.nav-links>li::after{display:none}
+.nav-links>li>a{padding:18px 22px}
+.dropdown-menu{position:static;display:none;box-shadow:none;background:#24183d}
+.dropdown.open .dropdown-menu{display:block}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+<div class="navbar">
+
+<div class="logo">
+<img src="logo.webp" alt="Stackly Logo">
+</div>
+
+<nav id="nav">
+<ul class="nav-links">
+<li >
+    <a href="home.html">HOME</a>
+</li>
+<li class="dropdown">
+<a href="service.html">SERVICES <i class="fa-solid fa-chevron-down"></i></a>
+<ul class="dropdown-menu">
+<li><a href="404.html">Repair</a></li>
+<li><a href="404.html">warranty</a></li>
+<li><a href="404.html">complaint</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="Games.html">Games <i class="fa-solid fa-chevron-down"></i></a>
+<ul class="dropdown-menu">
+<li><a href="404.html">Ghost hunter</a></li>
+<li><a href="404.html">HANA MONTANA</a></li>
+<li><a href="404.html">Cricket</a></li>
+</ul>
+</li>
+
+<li><a href="blog.html">BLOG</a></li>
+<li class="active"><a href="contact.html">CONTACT</a></li>
+</ul>
+</nav>
+
+<div class="icons">
+
+    <a href="login.html">
+        <i class="fa-regular fa-user"></i>
+    </a>
+
+    <a href="404.html">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+
+    <a href="404.html">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+
+</div>
+
+<div class="hamburger" id="burger">
+<span></span><span></span><span></span>
+</div>
+
+</div>
+</header>
+
+
+
+<script>const burger = document.getElementById("burger");
+const nav = document.getElementById("nav");
+const dropdownLinks = document.querySelectorAll(".dropdown > a");
+
+// Toggle Mobile Menu
+burger.addEventListener("click", () => {
+    nav.classList.toggle("show");
+    burger.classList.toggle("active");
+});
+
+// Mobile Dropdown
+// Mobile Dropdown
+dropdownLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+
+        if (window.innerWidth <= 991) {
+            e.preventDefault();
+
+            const currentDropdown = this.parentElement;
+
+            // Close all other dropdowns
+            document.querySelectorAll(".dropdown").forEach(drop => {
+                if (drop !== currentDropdown) {
+                    drop.classList.remove("open");
+                }
+            });
+
+            // Toggle current one
+            currentDropdown.classList.toggle("open");
+        }
+    });
+});
+
+// Close menu after clicking a normal link
+document.querySelectorAll(".nav-links li:not(.dropdown) a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("show");
+        burger.classList.remove("active");
+    });
+});
+
+// Close menu when switching to desktop
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 991) {
+        nav.classList.remove("show");
+        burger.classList.remove("active");
+
+        document.querySelectorAll(".dropdown").forEach(drop => {
+            drop.classList.remove("open");
+        });
+    }
+});
+
+// Sticky Header
+window.addEventListener("scroll", () => {
+    document.getElementById("header").classList.toggle("scrolled", window.scrollY > 20);
+});     
+</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stackly Contact</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="contact.css">
+
+</head>
+
+<body>
+
+<section class="stackly-contact-section">
+
+<div class="stackly-contact-overlay"></div>
+
+<div class="stackly-contact-bg-text">
+CONTACT
+</div>
+
+<div class="stackly-contact-container">
+
+<!-- LEFT -->
+
+<div class="stackly-contact-left">
+
+<span class="stackly-contact-badge">
+
+<i class="fa-solid fa-circle"></i>
+
+Contact
+
+</span>
+
+<h2>
+
+Get in touch
+
+</h2>
+
+<p>
+
+Have questions or ready to transform your business with AI automation? We'd love to hear from you.
+
+</p>
+
+<!-- CARD 1 -->
+
+<div class="stackly-contact-card">
+
+<div class="stackly-contact-icon">
+
+<i class="fa-regular fa-envelope"></i>
+
+</div>
+
+<div class="stackly-contact-info">
+
+<h4>Email us</h4>
+
+<span>hello@stackly.com</span>
+
+</div>
+
+<div class="stackly-contact-arrow">
+
+<i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="stackly-contact-card">
+
+<div class="stackly-contact-icon">
+
+<i class="fa-solid fa-phone"></i>
+
+</div>
+
+<div class="stackly-contact-info">
+
+<h4>Call us</h4>
+
+<span>+91 98765 43210</span>
+
+</div>
+
+<div class="stackly-contact-arrow">
+
+<i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+
+<div class="stackly-contact-card">
+
+<div class="stackly-contact-icon">
+
+<i class="fa-solid fa-location-dot"></i>
+
+</div>
+
+<div class="stackly-contact-info">
+
+<h4>Our Location</h4>
+
+<span>Chennai, Tamil Nadu</span>
+
+</div>
+
+<div class="stackly-contact-arrow">
+
+<i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="stackly-contact-right">
+
+<form
+class="stackly-contact-form"
+action="404.html"
+method="get">
+
+<input
+type="text"
+name="name"
+placeholder="Name"
+required>
+
+<input
+type="email"
+name="email"
+placeholder="Email"
+required>
+
+<textarea
+name="message"
+placeholder="Message"
+required></textarea>
+
+<button type="submit">
+
+Submit
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="contact.js"></script>
+<style>
+    /*==========================
+    GOOGLE FONT
+==========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Oxanium',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    overflow-x:hidden;
+    color:#fff;
+}
+
+/*==========================
+    CONTACT SECTION
+==========================*/
+
+.stackly-contact-section{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    padding:100px 8%;
+    overflow:hidden;
+    background:#050505;
+}
+
+/*==========================
+      RED GLOW
+==========================*/
+
+.stackly-contact-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#8b000030 0%,transparent 55%),
+    linear-gradient(180deg,#090909,#050505);
+    z-index:0;
+}
+
+/*==========================
+   BIG BACKGROUND TEXT
+==========================*/
+
+.stackly-contact-bg-text{
+    position:absolute;
+    top:45px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:170px;
+    font-weight:800;
+    color:rgba(255,255,255,.04);
+    user-select:none;
+    letter-spacing:8px;
+    white-space:nowrap;
+    z-index:1;
+    animation:stacklyTextFloat 6s ease-in-out infinite;
+}
+
+/*==========================
+      CONTAINER
+==========================*/
+
+.stackly-contact-container{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+/*==========================
+      LEFT SIDE
+==========================*/
+
+.stackly-contact-left{
+    animation:stacklyFadeLeft 1s ease;
+}
+
+.stackly-contact-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 20px;
+    border-radius:40px;
+    background:#121212;
+    border:1px solid rgba(255,0,0,.25);
+    color:#fff;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.stackly-contact-badge i{
+    color:#ff2d2d;
+    font-size:10px;
+}
+
+.stackly-contact-left h2{
+    font-size:54px;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.stackly-contact-left p{
+    color:#bcbcbc;
+    line-height:1.8;
+    margin-bottom:45px;
+    max-width:450px;
+}
+
+/*==========================
+      CONTACT CARD
+==========================*/
+
+.stackly-contact-card{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    padding:24px;
+
+    margin-bottom:22px;
+
+    background:#111111;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    transition:.4s;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.stackly-contact-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-100%;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,
+    transparent,
+    rgba(255,0,0,.12),
+    transparent);
+
+    transition:.8s;
+
+}
+
+.stackly-contact-card:hover::before{
+
+    left:100%;
+
+}
+
+.stackly-contact-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#ff1f1f;
+
+    box-shadow:0 0 30px rgba(255,0,0,.15);
+
+}
+
+/*==========================
+        ICON
+==========================*/
+
+.stackly-contact-icon{
+
+    width:62px;
+    height:62px;
+
+    border-radius:14px;
+
+    background:#181818;
+
+    border:1px solid rgba(255,0,0,.25);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.stackly-contact-icon i{
+
+    color:#ff3434;
+
+    font-size:22px;
+
+}
+
+/*==========================
+      INFO
+==========================*/
+
+.stackly-contact-info{
+
+    flex:1;
+
+}
+
+.stackly-contact-info h4{
+
+    font-size:18px;
+
+    margin-bottom:6px;
+
+    font-weight:700;
+
+}
+
+.stackly-contact-info span{
+
+    color:#9d9d9d;
+
+    font-size:15px;
+
+}
+
+/*==========================
+       ARROW
+==========================*/
+
+.stackly-contact-arrow{
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:#191919;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.4s;
+
+}
+
+.stackly-contact-arrow i{
+
+    color:#fff;
+    font-size:14px;
+
+}
+
+.stackly-contact-card:hover .stackly-contact-arrow{
+
+    background:#ff2020;
+
+    transform:rotate(45deg);
+
+}
+
+/*==========================
+      RIGHT PANEL
+==========================*/
+
+.stackly-contact-right{
+
+    animation:stacklyFadeRight 1s ease;
+
+}
+
+/*==========================
+      ANIMATIONS
+==========================*/
+
+@keyframes stacklyFadeLeft{
+
+from{
+
+opacity:0;
+
+transform:translateX(-80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes stacklyFadeRight{
+
+from{
+
+opacity:0;
+
+transform:translateX(80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes stacklyTextFloat{
+
+0%,100%{
+
+transform:translateX(-50%) translateY(0);
+
+}
+
+50%{
+
+transform:translateX(-50%) translateY(12px);
+
+}
+
+}
+/*==========================
+        CONTACT FORM
+==========================*/
+
+.stackly-contact-form{
+    background:#111111;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 0 35px rgba(255,0,0,.08);
+}
+
+/*==========================
+        INPUTS
+==========================*/
+
+.stackly-contact-form input,
+.stackly-contact-form textarea{
+
+    width:100%;
+
+    background:#181818;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#fff;
+
+    padding:18px 20px;
+
+    margin-bottom:18px;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.35s;
+
+}
+
+.stackly-contact-form textarea{
+
+    min-height:220px;
+
+    resize:none;
+
+}
+
+.stackly-contact-form input::placeholder,
+.stackly-contact-form textarea::placeholder{
+
+    color:#8c8c8c;
+
+}
+
+/*==========================
+      INPUT HOVER
+==========================*/
+
+.stackly-contact-form input:hover,
+.stackly-contact-form textarea:hover{
+
+    border-color:rgba(255,60,60,.4);
+
+}
+
+.stackly-contact-form input:focus,
+.stackly-contact-form textarea:focus{
+
+    border-color:#ff3030;
+
+    box-shadow:0 0 18px rgba(255,40,40,.25);
+
+    background:#1b1b1b;
+
+}
+
+/*==========================
+ HTML5 VALIDATION STYLES
+==========================*/
+
+.stackly-contact-form input:invalid,
+.stackly-contact-form textarea:invalid{
+
+    box-shadow:none;
+
+}
+
+.stackly-contact-form input:required,
+.stackly-contact-form textarea:required{
+
+    background:#181818;
+
+}
+
+/*==========================
+      SUBMIT BUTTON
+==========================*/
+
+.stackly-contact-form button{
+
+    width:100%;
+
+    height:62px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:linear-gradient(90deg,#ff1b1b,#8b0000);
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Shine Effect */
+
+.stackly-contact-form button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+}
+
+.stackly-contact-form button:hover::before{
+
+    left:130%;
+
+}
+
+/* Hover */
+
+.stackly-contact-form button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 30px rgba(255,0,0,.45);
+
+}
+
+/* Click */
+
+.stackly-contact-form button:active{
+
+    transform:scale(.97);
+
+}
+
+/*==========================
+     REMOVE BLUE OUTLINE
+==========================*/
+
+.stackly-contact-form button:focus{
+
+    outline:none;
+
+}
+
+/*==========================
+   CUSTOM SCROLLBAR
+==========================*/
+
+.stackly-contact-form textarea::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.stackly-contact-form textarea::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+.stackly-contact-form textarea::-webkit-scrollbar-thumb{
+
+    background:#ff2020;
+
+    border-radius:20px;
+
+}/*=========================================
+        FLOATING RED PARTICLES
+=========================================*/
+
+.stackly-contact-section::before,
+.stackly-contact-section::after{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    filter:blur(100px);
+    z-index:0;
+    animation:stacklyGlowMove 8s ease-in-out infinite;
+}
+
+.stackly-contact-section::before{
+    top:-120px;
+    left:-100px;
+    background:rgba(255,0,0,.18);
+}
+
+.stackly-contact-section::after{
+    right:-120px;
+    bottom:-120px;
+    background:rgba(255,40,40,.15);
+    animation-delay:4s;
+}
+
+/*=========================================
+        FORM ANIMATION
+=========================================*/
+
+.stackly-contact-form{
+
+    animation:stacklyFormFade 1s ease;
+
+}
+
+@keyframes stacklyFormFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(70px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================
+      CARD HOVER EFFECT
+=========================================*/
+
+.stackly-contact-card:hover{
+
+    transform:translateY(-8px) scale(1.02);
+
+}
+
+/*=========================================
+      INPUT PLACEHOLDER
+=========================================*/
+
+.stackly-contact-form input:focus::placeholder,
+.stackly-contact-form textarea:focus::placeholder{
+
+    opacity:.5;
+    transition:.3s;
+
+}
+
+/*=========================================
+      BUTTON ANIMATION
+=========================================*/
+
+.stackly-contact-form button{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.stackly-contact-form button::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent);
+
+    transition:1s;
+
+}
+
+.stackly-contact-form button:hover::after{
+
+    left:100%;
+
+}
+
+/*=========================================
+      CARD ICON GLOW
+=========================================*/
+
+.stackly-contact-card:hover
+.stackly-contact-icon{
+
+    box-shadow:0 0 25px rgba(255,0,0,.45);
+
+}
+
+/*=========================================
+      ICON ROTATE
+=========================================*/
+
+.stackly-contact-card:hover
+.stackly-contact-icon i{
+
+    transform:rotate(360deg);
+
+    transition:.7s;
+
+}
+
+/*=========================================
+      INPUT TRANSITION
+=========================================*/
+
+.stackly-contact-form input,
+.stackly-contact-form textarea,
+.stackly-contact-form button{
+
+    transition:.35s ease;
+
+}
+
+/*=========================================
+      BIG TITLE GLOW
+=========================================*/
+
+.stackly-contact-left h2{
+
+    text-shadow:0 0 25px rgba(255,0,0,.15);
+
+}
+
+/*=========================================
+      PARALLAX EFFECT
+=========================================*/
+
+.stackly-contact-container{
+
+    transition:.4s ease;
+
+}
+
+/*=========================================
+      RED LINE
+=========================================*/
+
+.stackly-contact-left h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:4px;
+
+    margin-top:18px;
+
+    background:linear-gradient(90deg,#ff0000,#6b0000);
+
+    border-radius:10px;
+
+}
+
+/*=========================================
+      RESPONSIVE
+=========================================*/
+
+@media(max-width:1200px){
+
+.stackly-contact-container{
+
+grid-template-columns:1fr;
+
+gap:60px;
+
+}
+
+.stackly-contact-right{
+
+order:2;
+
+}
+
+.stackly-contact-left{
+
+order:1;
+
+}
+
+}
+
+@media(max-width:991px){
+
+.stackly-contact-section{
+
+padding:80px 25px;
+
+}
+
+.stackly-contact-bg-text{
+
+font-size:110px;
+
+}
+
+.stackly-contact-left h2{
+
+font-size:42px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.stackly-contact-bg-text{
+
+display:none;
+
+}
+
+.stackly-contact-left h2{
+
+font-size:34px;
+
+}
+
+.stackly-contact-left p{
+
+font-size:15px;
+
+}
+
+.stackly-contact-card{
+
+padding:20px;
+
+}
+
+.stackly-contact-form{
+
+padding:22px;
+
+}
+
+.stackly-contact-form textarea{
+
+min-height:170px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.stackly-contact-section{
+
+padding:70px 18px;
+
+}
+
+.stackly-contact-left h2{
+
+font-size:28px;
+
+}
+
+.stackly-contact-icon{
+
+width:55px;
+
+height:55px;
+
+}
+
+.stackly-contact-form input,
+.stackly-contact-form textarea{
+
+padding:15px;
+
+font-size:14px;
+
+}
+
+.stackly-contact-form button{
+
+height:58px;
+
+font-size:15px;
+
+}
+
+}
+
+/*=========================================
+      KEYFRAMES
+=========================================*/
+
+@keyframes stacklyGlowMove{
+
+0%,100%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(50px,-30px);
+
+}
+
+}.stackly-contact-form button{
+    position:relative;
+    overflow:hidden;
+}
+
+.stackly-ripple{
+    position:absolute;
+    width:20px;
+    height:20px;
+    background:rgba(255,255,255,.6);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    animation:stacklyRipple .6s linear;
+    pointer-events:none;
+}
+
+@keyframes stacklyRipple{
+
+    from{
+        width:0;
+        height:0;
+        opacity:.8;
+    }
+
+    to{
+        width:400px;
+        height:400px;
+        opacity:0;
+    }
+
+}
+</style>
+<script>
+    // ======================================
+// Stackly Contact Page JS
+// ======================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /*=========================
+        FADE IN ON LOAD
+    =========================*/
+
+    const left = document.querySelector(".stackly-contact-left");
+    const right = document.querySelector(".stackly-contact-right");
+
+    if(left){
+        left.style.opacity = "0";
+        left.style.transform = "translateX(-80px)";
+    }
+
+    if(right){
+        right.style.opacity = "0";
+        right.style.transform = "translateX(80px)";
+    }
+
+    setTimeout(() => {
+
+        if(left){
+            left.style.transition = "1s ease";
+            left.style.opacity = "1";
+            left.style.transform = "translateX(0)";
+        }
+
+        if(right){
+            right.style.transition = "1s ease";
+            right.style.opacity = "1";
+            right.style.transform = "translateX(0)";
+        }
+
+    },300);
+
+    /*=========================
+        CARD HOVER EFFECT
+    =========================*/
+
+    document.querySelectorAll(".stackly-contact-card").forEach(card=>{
+
+        card.addEventListener("mouseenter",()=>{
+
+            card.style.transform="translateY(-8px) scale(1.02)";
+
+        });
+
+        card.addEventListener("mouseleave",()=>{
+
+            card.style.transform="translateY(0) scale(1)";
+
+        });
+
+    });
+
+    /*=========================
+       PARALLAX EFFECT
+    =========================*/
+
+    const section=document.querySelector(".stackly-contact-section");
+
+    section.addEventListener("mousemove",(e)=>{
+
+        const x=(e.clientX/window.innerWidth-.5)*20;
+        const y=(e.clientY/window.innerHeight-.5)*20;
+
+        section.style.backgroundPosition=`${50+x}% ${50+y}%`;
+
+    });
+
+    /*=========================
+      BUTTON RIPPLE
+    =========================*/
+
+    const button=document.querySelector(".stackly-contact-form button");
+
+    button.addEventListener("click",function(e){
+
+        const ripple=document.createElement("span");
+
+        ripple.classList.add("stackly-ripple");
+
+        const rect=this.getBoundingClientRect();
+
+        ripple.style.left=e.clientX-rect.left+"px";
+        ripple.style.top=e.clientY-rect.top+"px";
+
+        this.appendChild(ripple);
+
+        setTimeout(()=>{
+
+            ripple.remove();
+
+        },600);
+
+    });
+
+});
+</script>
+
+<footer class="stack-footer">
+
+    <h1 class="stack-bg-text">STACKLY</h1>
+
+    <div class="stack-footer-box">
+
+        <!-- Column 1 -->
+        <div class="stack-col">
+
+            <i class="fa-solid fa-gamepad"></i><div class="stack-logo">
+    <img src="logo.webp" alt="Stackly Logo">
+</div>
+
+            <h3>Ready to Play?</h3>
+
+            <p>
+                Join the Stackly gaming community and discover amazing
+                games every day.
+            </p>
+
+            <a href="contact.html" class="stack-red-btn">
+                Book a Call
+            </a>
+
+            <a href="404.html" class="stack-outline-btn">
+                View Games
+            </a>
+
+        </div>
+
+        <!-- Column 2 -->
+
+        <div class="stack-col">
+
+            <h4>Navigation</h4>
+
+            <a href="home.html">Home</a>
+
+            <a href="Games.html">Games</a>
+
+            <a href="service.html">Services</a>
+
+            <a href="blog.html">Blog</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <!-- Column 3 -->
+
+        <div class="stack-col">
+
+            <h4>Legal</h4>
+
+            <a href="404.html">Privacy Policy</a>
+
+            <a href="404.html">Terms & Conditions</a>
+
+            <a href="404.html">Refund Policy</a>
+
+        </div>
+
+        <!-- Column 4 -->
+
+        <div class="stack-col">
+
+            <h4>Contact</h4>
+
+            <p>support@stackly.com</p>
+
+            <a href="contact.html" class="stack-red-btn">
+                Contact Us
+            </a>
+
+        </div>
+
+        <!-- Column 5 -->
+
+        <div class="stack-col">
+
+            <h4>Follow Us</h4>
+
+            <div class="stack-social">
+
+                <a href="404.html"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="404.html"><i class="fab fa-instagram"></i></a>
+
+                <a href="404.html"><i class="fab fa-x-twitter"></i></a>
+
+                <a href="404.html"><i class="fab fa-discord"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+<style>
+    .stack-footer{
+
+    position:relative;
+
+    background:#070707;
+
+    padding:140px 6% 70px;
+
+    overflow:hidden;
+
+}
+.stack-logo{
+    width:80px;
+    margin-bottom:20px;
+}
+
+.stack-logo img{
+    width:100%;
+    display:block;
+    object-fit:contain;
+    transition:.4s ease;
+}
+
+.stack-logo img:hover{
+    transform:scale(1.08);
+}.stack-logo{
+    width:150px;
+    margin-bottom:25px;
+}
+
+.stack-bg-text{
+
+    position:absolute;
+
+    top:-40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:180px;
+
+    font-weight:900;
+
+    color:rgba(255,255,255,.03);
+
+    letter-spacing:10px;
+
+    user-select:none;
+
+}
+
+.stack-footer-box{
+
+    position:relative;
+
+    z-index:2;
+
+    background:#111;
+
+    border-radius:20px;
+
+    padding:60px;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+
+    gap:40px;
+
+}
+
+.stack-col h3{
+
+    color:#fff;
+
+    margin:18px 0;
+
+}
+
+.stack-col h4{
+
+    color:#fff;
+
+    margin-bottom:20px;
+
+}
+
+.stack-col p{
+
+    color:#aaa;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+.stack-col a{
+
+    display:block;
+
+    color:#bbb;
+
+    text-decoration:none;
+
+    margin-bottom:14px;
+
+    transition:.3s;
+
+}
+
+.stack-col a:hover{
+
+    color:#ff1e3c;
+
+}
+
+.stack-red-btn{
+
+    display:inline-block;
+
+    width:fit-content;
+
+    padding:14px 28px;
+
+    background:#ff1e3c;
+
+    color:#fff!important;
+
+    border-radius:40px;
+
+    margin-bottom:15px;
+
+    transition:.35s;
+
+}
+
+.stack-red-btn:hover{
+
+    transform:translateY(-5px);
+
+    background:#ff3955;
+
+}
+
+.stack-outline-btn{
+
+    display:inline-block;
+
+    width:fit-content;
+
+    padding:13px 28px;
+
+    border:2px solid #444;
+
+    border-radius:40px;
+
+}
+
+.stack-outline-btn:hover{
+
+    border-color:#ff1e3c;
+
+}
+
+.stack-social{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.stack-social a{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:1px solid #444;
+
+    border-radius:50%;
+
+    transition:.35s;
+
+}
+
+.stack-social a:hover{
+
+    background:#ff1e3c;
+
+    border-color:#ff1e3c;
+
+    color:#fff;
+
+}
+
+/* Tablet */
+
+@media(max-width:991px){
+
+.stack-footer-box{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.stack-bg-text{
+
+font-size:110px;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.stack-footer{
+
+padding:90px 20px 50px;
+
+}
+
+.stack-footer-box{
+
+grid-template-columns:1fr;
+
+padding:35px 25px;
+
+}
+
+.stack-bg-text{
+
+font-size:70px;
+
+top:10px;
+
+}
+
+.stack-col{
+
+text-align:center;
+
+}
+
+.stack-red-btn,
+
+.stack-outline-btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+.stack-social{
+
+justify-content:center;
+
+}
+
+}
+</style>
+</body>
+</html>

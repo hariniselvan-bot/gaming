@@ -1,0 +1,3988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly Header</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Montserrat,sans-serif}
+body{background:#111;color:#fff}
+header{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(32, 20, 52, 0);backdrop-filter:blur(8px);transition:.35s}
+header.scrolled{background:#18132b}
+.navbar{max-width:1400px;height:90px;margin:auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center}
+.logo img{height:55px}
+.nav-links{display:flex;list-style:none;gap:38px}
+.nav-links>li{position:relative}
+.nav-links>li>a{text-decoration:none;color:#fff;font-size:14px;font-weight:600;letter-spacing:1px;padding:35px 0;display:flex;align-items:center;gap:6px}
+.nav-links>li::after{content:"";position:absolute;left:0;bottom:12px;width:0;height:2px;background:#fff;transition:.35s}
+.nav-links>li:hover::after,
+.nav-links>li.active::after{
+    width:100%;
+}.dropdown-menu{position:absolute;top:100%;left:0;background:#23173b;min-width:220px;display:none;list-style:none;box-shadow:0 20px 35px rgba(0,0,0,.35)}
+.dropdown-menu li a{display:block;padding:14px 18px;color:#fff;text-decoration:none}
+.dropdown-menu li a:hover{background:#332253}
+.dropdown.open .dropdown-menu,.dropdown:hover .dropdown-menu{display:block}
+.icons{display:flex;gap:24px;font-size:18px}
+.icons i{cursor:pointer;transition:.3s}
+.icons i:hover{color:#b08cff}
+.icons{
+    display:flex;
+    gap:24px;
+    font-size:18px;
+}
+
+.icons a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.icons a:hover{
+    color:#b08cff;
+    transform:translateY(-3px);
+}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{width:28px;height:3px;background:#fff;transition:.3s}
+.hero{height:100vh;background:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=80') center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(42,25,70,.6)}
+.hero h1{position:relative;z-index:1;text-align:center;padding-top:45vh;font-size:64px;letter-spacing:8px}
+@media(max-width:991px){
+.hamburger{display:flex}
+.icons{display:none}
+nav{position:fixed;right:-100%;top:90px;width:290px;height:calc(100vh - 90px);background:#18122a;transition:.35s;overflow:auto}
+nav.show{right:0}
+.nav-links{flex-direction:column;gap:0}
+.nav-links>li::after{display:none}
+.nav-links>li>a{padding:18px 22px}
+.dropdown-menu{position:static;display:none;box-shadow:none;background:#24183d}
+.dropdown.open .dropdown-menu{display:block}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+<div class="navbar">
+
+<div class="logo">
+<img src="logo.webp" alt="Stackly Logo">
+</div>
+
+<nav id="nav">
+<ul class="nav-links">
+<li >
+    <a href="home.html">HOME</a>
+</li>
+<li class="dropdown">
+<a href="service.html">SERVICES <i class="fa-solid fa-chevron-down"></i></a>
+<ul class="dropdown-menu">
+<li><a href="404.html">Repair</a></li>
+<li><a href="404.html">warranty</a></li>
+<li><a href="404.html">complaint</a></li>
+</ul>
+</li>
+
+<li class="dropdown active">
+<a href="Games.html">Games <i class="fa-solid fa-chevron-down"></i></a>
+<ul class="dropdown-menu">
+<li><a href="404.html">Ghost hunter</a></li>
+<li><a href="404.html">HANA MONTANA</a></li>
+<li><a href="404.html">Cricket</a></li>
+</ul>
+</li>
+
+<li><a href="blog.html">BLOG</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+</nav>
+
+<div class="icons">
+
+    <a href="login.html">
+        <i class="fa-regular fa-user"></i>
+    </a>
+
+    <a href="404.html">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+
+    <a href="404.html">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+
+</div>
+
+<div class="hamburger" id="burger">
+<span></span><span></span><span></span>
+</div>
+
+</div>
+</header>
+
+
+
+<script>const burger = document.getElementById("burger");
+const nav = document.getElementById("nav");
+const dropdownLinks = document.querySelectorAll(".dropdown > a");
+
+// Toggle Mobile Menu
+burger.addEventListener("click", () => {
+    nav.classList.toggle("show");
+    burger.classList.toggle("active");
+});
+
+// Mobile Dropdown
+// Mobile Dropdown
+dropdownLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+
+        if (window.innerWidth <= 991) {
+            e.preventDefault();
+
+            const currentDropdown = this.parentElement;
+
+            // Close all other dropdowns
+            document.querySelectorAll(".dropdown").forEach(drop => {
+                if (drop !== currentDropdown) {
+                    drop.classList.remove("open");
+                }
+            });
+
+            // Toggle current one
+            currentDropdown.classList.toggle("open");
+        }
+    });
+});
+
+// Close menu after clicking a normal link
+document.querySelectorAll(".nav-links li:not(.dropdown) a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("show");
+        burger.classList.remove("active");
+    });
+});
+
+// Close menu when switching to desktop
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 991) {
+        nav.classList.remove("show");
+        burger.classList.remove("active");
+
+        document.querySelectorAll(".dropdown").forEach(drop => {
+            drop.classList.remove("open");
+        });
+    }
+});
+
+// Sticky Header
+window.addEventListener("scroll", () => {
+    document.getElementById("header").classList.toggle("scrolled", window.scrollY > 20);
+});     
+</script>
+
+<!--=========================
+    GAMES HERO SECTION
+==========================-->
+
+<section class="games-hero">
+
+    <!-- Background Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Left Indicators -->
+    <div class="hero-indicators">
+        <span></span>
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="hero-container">
+
+        <!--==================
+            LEFT CONTENT
+        ===================-->
+
+        <div class="hero-content">
+
+            <span class="hero-subtitle">
+                Online Streaming Media
+            </span>
+
+            <h1>
+                <span>VIDEO</span>
+                GAMES
+            </h1>
+
+            <p>
+                Experience the next generation of gaming with immersive worlds,
+                intense battles, and unforgettable adventures. Join thousands of
+                players worldwide and become part of the ultimate gaming community.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="login.html" class="btn-primary">
+                    <i class="fa-solid fa-gamepad"></i>
+                    Play Now
+                </a>
+
+                <a href="contact.html" class="btn-secondary">
+                    Explore Games
+                </a>
+
+            </div>
+
+        </div>
+
+        <!--==================
+            RIGHT IMAGE
+        ===================-->
+
+
+
+    </div>
+
+    <!-- Fire Particles -->
+    <div class="particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</section>
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+    /*=========================
+GOOGLE FONT
+=========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Oxanium',sans-serif;
+}
+
+body{
+background:#090909;
+overflow-x:hidden;
+}
+
+/*=========================
+HERO
+=========================*/
+
+.games-hero{
+position:relative;
+width:100%;
+height:100vh;
+background:url("gamepg1.webp") center center/cover no-repeat;
+display:flex;
+align-items:center;
+overflow:hidden;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:
+linear-gradient(to right,
+rgba(0,0,0,.82),
+rgba(0,0,0,.55),
+rgba(0,0,0,.15));
+}
+
+/*=========================
+CONTAINER
+=========================*/
+
+.hero-container{
+position:relative;
+z-index:2;
+width:90%;
+max-width:1400px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:60px;
+}
+
+/*=========================
+LEFT CONTENT
+=========================*/
+
+.hero-content{
+flex:1;
+max-width:620px;
+}
+
+.hero-subtitle{
+display:inline-block;
+font-size:20px;
+letter-spacing:8px;
+text-transform:uppercase;
+color:#fff;
+margin-bottom:25px;
+}
+
+.hero-content h1{
+font-size:110px;
+font-weight:900;
+line-height:.9;
+text-transform:uppercase;
+margin-bottom:35px;
+}
+
+.hero-content h1 span{
+display:block;
+color:#fff;
+}
+
+.hero-content h1{
+color:#ff2d3d;
+text-shadow:
+0 0 15px rgba(255,40,60,.45);
+}
+
+.hero-content p{
+color:#d8d8d8;
+font-size:18px;
+line-height:34px;
+margin-bottom:45px;
+max-width:550px;
+}
+
+/*=========================
+BUTTONS
+=========================*/
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+text-decoration:none;
+font-weight:700;
+text-transform:uppercase;
+transition:.4s;
+}
+
+.btn-primary{
+
+padding:18px 40px;
+
+background:#ff2d3d;
+
+color:#fff;
+
+clip-path:polygon(8% 0,
+100% 0,
+92% 100%,
+0 100%);
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+.btn-primary:hover{
+
+background:#ff5060;
+
+transform:translateY(-5px);
+
+box-shadow:0 0 25px rgba(255,45,61,.5);
+
+}
+
+.btn-secondary{
+
+padding:18px 40px;
+
+border:2px solid #ff2d3d;
+
+color:#fff;
+
+clip-path:polygon(8% 0,
+100% 0,
+92% 100%,
+0 100%);
+
+}
+
+.btn-secondary:hover{
+
+background:#ff2d3d;
+
+transform:translateY(-5px);
+
+}
+
+/*=========================
+RIGHT IMAGE
+=========================*/
+
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-image img{
+width:100%;
+max-width:700px;
+pointer-events:none;
+user-select:none;
+}
+
+/*=========================
+LEFT INDICATORS
+=========================*/
+
+.hero-indicators{
+position:absolute;
+left:40px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:16px;
+z-index:5;
+}
+
+.hero-indicators span{
+width:16px;
+height:16px;
+background:#fff;
+transition:.3s;
+}
+
+.hero-indicators .active{
+background:#ff2d3d;
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media(max-width:1100px){
+
+.hero-container{
+
+flex-direction:column;
+
+text-align:center;
+
+padding-top:100px;
+
+}
+
+.hero-content{
+
+max-width:100%;
+
+}
+
+.hero-content p{
+
+margin:auto auto 40px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-content h1{
+
+font-size:80px;
+
+}
+
+.hero-image img{
+
+max-width:500px;
+
+}
+
+.hero-indicators{
+
+display:none;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.games-hero{
+
+height:auto;
+
+padding:100px 20px 60px;
+
+}
+
+.hero-content h1{
+
+font-size:58px;
+
+}
+
+.hero-subtitle{
+
+font-size:14px;
+
+letter-spacing:4px;
+
+}
+
+.hero-content p{
+
+font-size:16px;
+
+line-height:28px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons a{
+
+justify-content:center;
+
+}
+
+.hero-image img{
+
+max-width:360px;
+
+}
+
+}
+/*=========================
+TEXT ANIMATIONS
+=========================*/
+
+.hero-subtitle{
+    opacity:0;
+    transform:translateX(-80px);
+    animation:slideLeft .8s ease forwards;
+    animation-delay:.3s;
+}
+
+.hero-content h1{
+    opacity:0;
+    transform:translateY(60px);
+    animation:fadeUp .9s ease forwards;
+    animation-delay:.7s;
+}
+
+.hero-content p{
+    opacity:0;
+    transform:translateY(50px);
+    animation:fadeUp .9s ease forwards;
+    animation-delay:1.1s;
+}
+
+.hero-buttons{
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp .9s ease forwards;
+    animation-delay:1.5s;
+}
+
+/*=========================
+CHARACTER
+=========================*/
+
+.hero-image img{
+
+    animation:
+    float 4s ease-in-out infinite,
+    heroIn 1.2s ease;
+
+    filter:
+    drop-shadow(0 0 35px rgba(255,40,60,.35));
+
+}
+
+/*=========================
+PARTICLES
+=========================*/
+
+.particles{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.particles span{
+
+    position:absolute;
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    background:#ff453a;
+
+    box-shadow:0 0 12px #ff453a;
+
+    animation:fire 8s linear infinite;
+
+}
+
+/* Random Positions */
+
+.particles span:nth-child(1){left:5%;animation-duration:8s;animation-delay:0s;}
+.particles span:nth-child(2){left:15%;animation-duration:6s;animation-delay:2s;}
+.particles span:nth-child(3){left:25%;animation-duration:7s;animation-delay:4s;}
+.particles span:nth-child(4){left:38%;animation-duration:9s;animation-delay:1s;}
+.particles span:nth-child(5){left:50%;animation-duration:6s;animation-delay:3s;}
+.particles span:nth-child(6){left:63%;animation-duration:8s;animation-delay:2s;}
+.particles span:nth-child(7){left:75%;animation-duration:7s;animation-delay:4s;}
+.particles span:nth-child(8){left:86%;animation-duration:9s;animation-delay:2s;}
+.particles span:nth-child(9){left:93%;animation-duration:8s;animation-delay:5s;}
+.particles span:nth-child(10){left:98%;animation-duration:7s;animation-delay:3s;}
+
+/*=========================
+BUTTON GLOW
+=========================*/
+
+.btn-primary{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn-primary::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.4),
+        transparent
+    );
+
+    transition:.8s;
+
+}
+
+.btn-primary:hover::before{
+
+    left:120%;
+
+}
+
+.btn-secondary{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn-secondary::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:#ff2d3d;
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.45s;
+
+    z-index:-1;
+
+}
+
+.btn-secondary:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/*=========================
+INDICATORS
+=========================*/
+
+.hero-indicators span{
+
+    animation:pulse 2s infinite;
+
+}
+
+.hero-indicators span:nth-child(2){
+
+    animation-delay:.3s;
+
+}
+
+.hero-indicators span:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.hero-indicators span:nth-child(4){
+
+    animation-delay:.9s;
+
+}
+
+/*=========================
+KEYFRAMES
+=========================*/
+
+@keyframes slideLeft{
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes heroIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(180px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+}
+
+@keyframes fire{
+
+    from{
+
+        bottom:-30px;
+
+        opacity:0;
+
+        transform:translateX(0) scale(.4);
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        bottom:110%;
+
+        opacity:0;
+
+        transform:translateX(80px) scale(1.4);
+
+    }
+
+}
+
+@keyframes pulse{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.4);
+
+    }
+
+}
+</style>
+<script>
+    .hero-buttons a{
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-buttons a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    left:var(--x);
+
+    top:var(--y);
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+    transition:.6s;
+
+}
+
+.hero-buttons a:hover::after{
+
+    width:320px;
+
+    height:320px;
+
+}
+</script>
+<!--=========================
+ TOURNAMENT RESULTS
+==========================-->
+
+<section class="tournament-section">
+
+    <div class="overlay"></div>
+
+    <!-- Top Red Line -->
+    <div class="top-line"></div>
+
+    <div class="container">
+
+        <!-- Heading -->
+
+        <div class="tournament-heading">
+
+            <div class="left">
+
+                <h2>
+                    LAST <span>RESULTS FOR</span><br>
+                    TOURNAMENT
+                </h2>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="right">
+
+                <h4>LATEST RESULTS</h4>
+
+            </div>
+
+        </div>
+
+        <!-- Match -->
+
+        <div class="match-wrapper">
+
+            <!-- Left Team -->
+
+            <div class="team left-team">
+
+                <div class="star">
+                    ★
+                </div>
+
+                <div class="team-logo">
+
+                    <img src="gamespg2.webp" alt="">
+
+                </div>
+
+                <div class="team-info">
+
+                    <h3>
+                        REDREX GAMING :
+                        <span>WIN</span>
+                    </h3>
+
+                    <p>
+                        WATCH :
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                        <i class="fa-brands fa-twitch"></i>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Center -->
+
+            <div class="match-status">
+
+                <h1>DONE</h1>
+
+                <span>
+                    OCTOBER 7, 2023 • 8:30 PM
+                </span>
+
+            </div>
+
+            <!-- Right Team -->
+
+            <div class="team right-team">
+
+                <div class="team-info">
+
+                    <h3>
+                        EAGLE GAMING :
+                        <span>2ND</span>
+                    </h3>
+
+                    <p>
+
+                        WATCH :
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                        <i class="fa-brands fa-twitch"></i>
+
+                    </p>
+
+                </div>
+
+                <div class="team-logo">
+
+                    <img src="gamepg3.webp" alt="">
+
+                </div>
+
+                <div class="star">
+                    ★
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Button -->
+
+        <div class="watch-btn">
+
+            <a href="404.html">
+                WATCH MATCH
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Fire Particles -->
+
+    <div class="particles">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+</section>
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+    /*=========================
+GOOGLE FONT
+=========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Oxanium',sans-serif;
+}
+
+body{
+background:#090909;
+overflow-x:hidden;
+}
+
+/*=========================
+SECTION
+=========================*/
+
+.tournament-section{
+position:relative;
+padding:110px 8%;
+background:url("images/tournament-bg.webp") center/cover no-repeat;
+overflow:hidden;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(6,6,10,.82);
+backdrop-filter:blur(2px);
+}
+
+.container{
+position:relative;
+z-index:2;
+max-width:1400px;
+margin:auto;
+}
+
+/*=========================
+TOP LINE
+=========================*/
+
+.top-line{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:8px;
+background:#ff2d3d;
+box-shadow:0 0 25px rgba(255,45,61,.6);
+}
+
+/*=========================
+HEADING
+=========================*/
+
+.tournament-heading{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+margin-bottom:90px;
+}
+
+.tournament-heading h2{
+font-size:58px;
+font-weight:900;
+line-height:1.1;
+text-transform:uppercase;
+color:#fff;
+}
+
+.tournament-heading h2 span{
+color:#ff2d3d;
+}
+
+.divider{
+width:3px;
+height:120px;
+background:#ff2d3d;
+}
+
+.right h4{
+font-size:22px;
+letter-spacing:8px;
+color:#ff2d3d;
+text-transform:uppercase;
+}
+
+/*=========================
+MATCH
+=========================*/
+
+.match-wrapper{
+display:grid;
+grid-template-columns:1fr auto 1fr;
+align-items:center;
+gap:40px;
+}
+
+/*=========================
+TEAM
+=========================*/
+
+.team{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+background:rgba(30,28,60,.55);
+
+backdrop-filter:blur(10px);
+
+padding:22px 30px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.team:hover{
+
+transform:translateY(-8px);
+
+border-color:#ff2d3d;
+
+box-shadow:0 0 30px rgba(255,45,61,.25);
+
+}
+
+.team-logo img{
+width:120px;
+display:block;
+}
+
+.team-info{
+padding:0 20px;
+}
+
+.team-info h3{
+font-size:28px;
+color:#fff;
+margin-bottom:14px;
+}
+
+.team-info span{
+color:#ff2d3d;
+}
+
+.team-info p{
+color:#d5d5d5;
+display:flex;
+align-items:center;
+gap:12px;
+font-size:15px;
+letter-spacing:2px;
+}
+
+.team-info i{
+font-size:18px;
+}
+
+/*=========================
+STAR
+=========================*/
+
+.star{
+font-size:26px;
+color:#ff2d3d;
+}
+
+/*=========================
+CENTER
+=========================*/
+
+.match-status{
+text-align:center;
+}
+
+.match-status h1{
+font-size:76px;
+font-weight:900;
+letter-spacing:14px;
+color:#fff;
+}
+
+.match-status span{
+display:block;
+margin-top:10px;
+font-size:18px;
+color:#ff2d3d;
+letter-spacing:2px;
+}
+
+/*=========================
+BUTTON
+=========================*/
+
+.watch-btn{
+margin-top:70px;
+text-align:center;
+}
+
+.watch-btn a{
+
+display:inline-block;
+
+padding:20px 60px;
+
+background:#ff2d3d;
+
+color:#fff;
+
+text-decoration:none;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+clip-path:polygon(10% 0,
+100% 0,
+90% 100%,
+0 100%);
+
+transition:.4s;
+
+}
+
+.watch-btn a:hover{
+
+background:#ff4555;
+
+transform:translateY(-6px);
+
+box-shadow:0 0 25px rgba(255,45,61,.45);
+
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media(max-width:1200px){
+
+.match-wrapper{
+grid-template-columns:1fr;
+gap:50px;
+}
+
+.tournament-heading{
+flex-direction:column;
+text-align:center;
+}
+
+.divider{
+width:120px;
+height:3px;
+}
+
+}
+
+@media(max-width:768px){
+
+.tournament-section{
+padding:80px 20px;
+}
+
+.tournament-heading h2{
+font-size:36px;
+}
+
+.right h4{
+font-size:15px;
+letter-spacing:4px;
+}
+
+.team{
+flex-direction:column;
+text-align:center;
+gap:20px;
+}
+
+.team-info{
+padding:15px 0;
+}
+
+.team-info h3{
+font-size:22px;
+}
+
+.match-status h1{
+font-size:52px;
+letter-spacing:8px;
+}
+
+.match-status span{
+font-size:14px;
+}
+
+.team-logo img{
+width:90px;
+}
+
+.watch-btn a{
+padding:16px 45px;
+}
+
+}
+/*=========================
+SCROLL ANIMATION
+=========================*/
+
+.tournament-heading,
+.left-team,
+.match-status,
+.right-team,
+.watch-btn{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:1s cubic-bezier(.22,1,.36,1);
+
+}
+
+.tournament-heading.show,
+.left-team.show,
+.match-status.show,
+.right-team.show,
+.watch-btn.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*=========================
+TEAM GLOW
+=========================*/
+
+.team{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.team::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:80%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
+
+    transition:.8s;
+
+}
+
+.team:hover::before{
+
+    left:130%;
+
+}
+
+.team:hover{
+
+    transform:translateY(-10px) scale(1.02);
+
+    border-color:#ff2d3d;
+
+    box-shadow:
+    0 0 35px rgba(255,45,61,.35);
+
+}
+
+/*=========================
+BUTTON SHINE
+=========================*/
+
+.watch-btn a{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.watch-btn a::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:80%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transition:.7s;
+
+}
+
+.watch-btn a:hover::before{
+
+    left:130%;
+
+}
+
+/*=========================
+TEAM LOGO
+=========================*/
+
+.team-logo img{
+
+    transition:.45s;
+
+}
+
+.team:hover .team-logo img{
+
+    transform:scale(1.1);
+
+    filter:drop-shadow(0 0 20px rgba(255,45,61,.5));
+
+}
+
+/*=========================
+CENTER TEXT
+=========================*/
+
+.match-status h1{
+
+    animation:glow 2.5s infinite;
+
+}
+
+@keyframes glow{
+
+0%,100%{
+
+text-shadow:
+0 0 8px rgba(255,255,255,.15);
+
+}
+
+50%{
+
+text-shadow:
+0 0 25px rgba(255,45,61,.7);
+
+}
+
+}
+
+/*=========================
+FIRE PARTICLES
+=========================*/
+
+.particles{
+
+position:absolute;
+
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+.particles span{
+
+position:absolute;
+
+bottom:-50px;
+
+width:5px;
+
+height:5px;
+
+border-radius:50%;
+
+background:#ff2d3d;
+
+box-shadow:0 0 12px #ff2d3d;
+
+animation:fire 8s linear infinite;
+
+}
+
+.particles span:nth-child(1){left:6%;animation-delay:0s;}
+.particles span:nth-child(2){left:18%;animation-delay:2s;}
+.particles span:nth-child(3){left:32%;animation-delay:4s;}
+.particles span:nth-child(4){left:46%;animation-delay:1s;}
+.particles span:nth-child(5){left:60%;animation-delay:3s;}
+.particles span:nth-child(6){left:74%;animation-delay:5s;}
+.particles span:nth-child(7){left:86%;animation-delay:2s;}
+.particles span:nth-child(8){left:95%;animation-delay:4s;}
+
+@keyframes fire{
+
+0%{
+
+transform:translateY(0) scale(.3);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-900px)
+translateX(80px)
+scale(1.5);
+
+opacity:0;
+
+}
+
+}
+
+/*=========================
+TOP RED LINE
+=========================*/
+
+.top-line{
+
+animation:lineGlow 3s infinite;
+
+}
+
+@keyframes lineGlow{
+
+0%,100%{
+
+box-shadow:
+0 0 15px rgba(255,45,61,.5);
+
+}
+
+50%{
+
+box-shadow:
+0 0 35px rgba(255,45,61,1);
+
+}
+
+}
+
+/*=========================
+HOVER EFFECT
+=========================*/
+
+.team-info h3{
+
+transition:.3s;
+
+}
+
+.team:hover h3{
+
+color:#ff2d3d;
+
+}
+
+.team:hover h3 span{
+
+color:#fff;
+
+}
+</style>
+<script>
+    //======================================
+// TOURNAMENT SCROLL ANIMATION
+//======================================
+
+const tournamentSection = document.querySelector(".tournament-section");
+
+const tournamentItems = [
+    document.querySelector(".tournament-heading"),
+    document.querySelector(".left-team"),
+    document.querySelector(".match-status"),
+    document.querySelector(".right-team"),
+    document.querySelector(".watch-btn")
+];
+
+const tournamentObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            tournamentItems.forEach((item, index) => {
+
+                setTimeout(() => {
+
+                    item.classList.add("show");
+
+                }, index * 250);
+
+            });
+
+        } else {
+
+            tournamentItems.forEach(item => {
+
+                item.classList.remove("show");
+
+            });
+
+        }
+
+    });
+
+}, {
+    threshold:0.25
+});
+
+tournamentObserver.observe(tournamentSection);
+
+
+//======================================
+// BUTTON RIPPLE EFFECT
+//======================================
+
+const watchBtn = document.querySelector(".watch-btn a");
+
+watchBtn.addEventListener("mousemove", function(e){
+
+    const rect = this.getBoundingClientRect();
+
+    this.style.setProperty("--x",
+        `${e.clientX - rect.left}px`);
+
+    this.style.setProperty("--y",
+        `${e.clientY - rect.top}px`);
+
+});
+
+
+//======================================
+// TEAM CARD PARALLAX
+//======================================
+
+document.querySelectorAll(".team").forEach(card=>{
+
+    card.addEventListener("mousemove",(e)=>{
+
+        const rect = card.getBoundingClientRect();
+
+        const x = (e.clientX - rect.left - rect.width/2)/18;
+
+        const y = (e.clientY - rect.top - rect.height/2)/18;
+
+        card.style.transform =
+        `rotateY(${x}deg) rotateX(${-y}deg) translateY(-8px)`;
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform = "";
+
+    });
+
+});
+
+
+//======================================
+// GLOWING DONE TEXT
+//======================================
+
+const doneText = document.querySelector(".match-status h1");
+
+setInterval(()=>{
+
+    doneText.style.textShadow =
+    "0 0 35px rgba(255,45,61,.9)";
+
+    setTimeout(()=>{
+
+        doneText.style.textShadow =
+        "0 0 10px rgba(255,255,255,.25)";
+
+    },700);
+
+},1800);
+</script>
+
+<!--=========================
+    GAME ABOUT SECTION
+==========================-->
+
+<section class="game-about-section">
+
+    <div class="game-about-overlay"></div>
+
+    <div class="game-about-container">
+
+        <!-- Left Image -->
+
+        <div class="game-about-image game-fade-item">
+
+            <img src="gamepg4.webp" alt="Gaming Character">
+
+        </div>
+
+        <!-- Right Content -->
+
+        <div class="game-about-content">
+
+            <span class="game-about-subtitle game-fade-item">
+                MORE ABOUT US
+            </span>
+
+            <h2 class="game-fade-item">
+                WELCOME TO OUR
+                <span>DIFFERENT</span><br>
+                <span>NEW GAMING</span> WORLD
+            </h2>
+
+            <p class="game-fade-item">
+                Enter a world where every battle tells a story and every victory unlocks
+                new adventures. Join thousands of gamers, compete in tournaments,
+                unlock achievements and experience next-generation gameplay.
+            </p>
+
+            <!-- Stats -->
+
+            <div class="game-about-stats">
+
+                <div class="game-stat-box game-fade-item">
+                    <h3>50K+</h3>
+                    <span>MEMBERS</span>
+                </div>
+
+                <div class="game-stat-box game-fade-item">
+                    <h3>17K+</h3>
+                    <span>TOURNAMENTS</span>
+                </div>
+
+                <div class="game-stat-box game-fade-item">
+                    <h3>40K+</h3>
+                    <span>GAMES</span>
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+
+            <div class="game-about-buttons game-fade-item">
+
+                <a href="contact.html" class="game-about-btn">
+                    ABOUT US
+                </a>
+
+                <a href="404.html" class="game-video-btn">
+
+                    <i class="fa-solid fa-play"></i>
+
+                    <span>Watch Our Video</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<style>
+    /*=========================
+GAME ABOUT SECTION
+=========================*/
+
+.game-about-section{
+    position:relative;
+    padding:120px 8%;
+    background:url("images/about-bg.webp") center center/cover no-repeat;
+    overflow:hidden;
+}
+
+.game-about-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(7,10,18,.84);
+}
+
+.game-about-container{
+    position:relative;
+    z-index:2;
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:80px;
+}
+
+/*=========================
+LEFT IMAGE
+=========================*/
+
+.game-about-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.game-about-image img{
+    width:100%;
+    max-width:620px;
+    filter:drop-shadow(0 0 25px rgba(255,40,60,.35));
+    animation:gameFloat 5s ease-in-out infinite;
+}
+
+/*=========================
+RIGHT CONTENT
+=========================*/
+
+.game-about-subtitle{
+    display:inline-block;
+    color:#8e8eff;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    font-size:14px;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+.game-about-content h2{
+    color:#fff;
+    font-size:62px;
+    font-weight:900;
+    line-height:1.1;
+    text-transform:uppercase;
+    margin-bottom:30px;
+}
+
+.game-about-content h2 span{
+    color:#ff2d3d;
+}
+
+.game-about-content p{
+    color:#cfcfcf;
+    line-height:32px;
+    font-size:17px;
+    margin-bottom:45px;
+}
+
+/*=========================
+STATS
+=========================*/
+
+.game-about-stats{
+    display:flex;
+    gap:50px;
+    margin-bottom:45px;
+}
+
+.game-stat-box h3{
+    color:#fff;
+    font-size:48px;
+    font-weight:800;
+}
+
+.game-stat-box span{
+    color:#999;
+    font-size:14px;
+    letter-spacing:3px;
+}
+
+/*=========================
+BUTTONS
+=========================*/
+
+.game-about-buttons{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.game-about-btn{
+    position:relative;
+    overflow:hidden;
+    text-decoration:none;
+    color:#fff;
+    background:#ff2d3d;
+    padding:18px 48px;
+    font-weight:700;
+    text-transform:uppercase;
+    clip-path:polygon(8% 0,
+    100% 0,
+    92% 100%,
+    0 100%);
+    transition:.4s;
+}
+
+.game-about-btn:hover{
+    background:#ff4555;
+    transform:translateY(-6px);
+    box-shadow:0 0 25px rgba(255,45,61,.45);
+}
+
+.game-about-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:80%;
+    height:100%;
+    background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.4),
+    transparent);
+    transition:.8s;
+}
+
+.game-about-btn:hover::before{
+    left:120%;
+}
+
+/*=========================
+VIDEO BUTTON
+=========================*/
+
+.game-video-btn{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:700;
+}
+
+.game-video-btn i{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    border:3px solid #ff2d3d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#ff2d3d;
+    transition:.4s;
+}
+
+.game-video-btn:hover i{
+    background:#ff2d3d;
+    color:#fff;
+    transform:scale(1.1);
+}
+
+/*=========================
+FADE ANIMATION
+=========================*/
+
+.game-fade-item{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s ease;
+}
+
+.game-fade-item.game-show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/*=========================
+FLOAT
+=========================*/
+
+@keyframes gameFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-18px);
+}
+
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media(max-width:1100px){
+
+.game-about-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.game-about-image{
+order:2;
+}
+
+.game-about-content{
+order:1;
+}
+
+.game-about-stats{
+justify-content:center;
+}
+
+.game-about-buttons{
+justify-content:center;
+}
+
+}
+
+@media(max-width:768px){
+
+.game-about-section{
+padding:80px 20px;
+}
+
+.game-about-content h2{
+font-size:40px;
+}
+
+.game-about-content p{
+font-size:16px;
+line-height:28px;
+}
+
+.game-about-stats{
+flex-direction:column;
+gap:25px;
+}
+
+.game-about-buttons{
+flex-direction:column;
+}
+
+.game-about-image img{
+max-width:350px;
+}
+
+}
+</style>
+<script>
+    //=======================================
+// GAME ABOUT SECTION SCROLL ANIMATION
+//=======================================
+
+const gameAboutSection = document.querySelector(".game-about-section");
+
+const gameAboutItems = [
+    document.querySelector(".game-about-image"),
+    document.querySelector(".game-about-subtitle"),
+    document.querySelector(".game-about-content h2"),
+    document.querySelector(".game-about-content p"),
+    ...document.querySelectorAll(".game-stat-box"),
+    document.querySelector(".game-about-buttons")
+];
+
+const gameAboutObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            gameAboutItems.forEach((item, index) => {
+
+                setTimeout(() => {
+
+                    item.classList.add("game-show");
+
+                }, index * 220);
+
+            });
+
+        } else {
+
+            gameAboutItems.forEach(item => {
+
+                item.classList.remove("game-show");
+
+            });
+
+        }
+
+    });
+
+}, {
+    threshold: 0.25
+});
+
+gameAboutObserver.observe(gameAboutSection);
+
+
+//=======================================
+// IMAGE PARALLAX EFFECT
+//=======================================
+
+const gameImage = document.querySelector(".game-about-image img");
+
+gameAboutSection.addEventListener("mousemove", (e) => {
+
+    const x = (window.innerWidth / 2 - e.clientX) / 45;
+    const y = (window.innerHeight / 2 - e.clientY) / 45;
+
+    gameImage.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+});
+
+gameAboutSection.addEventListener("mouseleave", () => {
+
+    gameImage.style.transform = "";
+
+});
+
+
+//=======================================
+// BUTTON RIPPLE EFFECT
+//=======================================
+
+const gameBtn = document.querySelector(".game-about-btn");
+
+gameBtn.addEventListener("mousemove", function(e){
+
+    const rect = this.getBoundingClientRect();
+
+    this.style.setProperty("--x", `${e.clientX - rect.left}px`);
+    this.style.setProperty("--y", `${e.clientY - rect.top}px`);
+
+});
+
+
+//=======================================
+// OPTIONAL COUNTER ANIMATION
+//=======================================
+
+const counters = document.querySelectorAll(".game-stat-box h3");
+
+function animateCounter(counter){
+
+    const target = parseInt(counter.innerText);
+    const suffix = counter.innerText.replace(/[0-9]/g,'');
+
+    let count = 0;
+
+    const speed = target / 80;
+
+    const update = () => {
+
+        count += speed;
+
+        if(count < target){
+
+            counter.innerText = Math.floor(count) + suffix;
+
+            requestAnimationFrame(update);
+
+        }else{
+
+            counter.innerText = target + suffix;
+
+        }
+
+    }
+
+    update();
+
+}
+
+let counted = false;
+
+const counterObserver = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting && !counted){
+
+            counters.forEach(counter=>{
+
+                animateCounter(counter);
+
+            });
+
+            counted = true;
+
+        }
+
+    });
+
+},{threshold:.4});
+
+counterObserver.observe(gameAboutSection);
+</script>
+
+<section class="cod-marquee-section">
+
+    <div class="cod-marquee">
+
+        <div class="cod-track">
+
+            <span>🎮 ACTION</span>
+            <span>✦</span>
+
+            <span>WARZONE</span>
+            <span>✦</span>
+
+            <span>MULTIPLAYER</span>
+            <span>✦</span>
+
+            <span>BATTLE ROYALE</span>
+            <span>✦</span>
+
+            <span>NEW MISSIONS</span>
+            <span>✦</span>
+
+            <span>FREE REWARDS</span>
+            <span>✦</span>
+
+            <!-- Duplicate -->
+
+            <span>🎮 ACTION</span>
+            <span>✦</span>
+
+            <span>WARZONE</span>
+            <span>✦</span>
+
+            <span>MULTIPLAYER</span>
+            <span>✦</span>
+
+            <span>BATTLE ROYALE</span>
+            <span>✦</span>
+
+            <span>NEW MISSIONS</span>
+            <span>✦</span>
+
+            <span>FREE REWARDS</span>
+
+        </div>
+
+    </div>
+
+</section>
+<style>
+    <i class="fa-solid fa-crosshairs"></i>
+
+<i class="fa-solid fa-skull"></i>
+
+<i class="fa-solid fa-gamepad"></i>
+
+<i class="fa-solid fa-bolt"></i>
+
+<i class="fa-solid fa-gun"></i>
+.cod-marquee-section{
+
+    width:100%;
+    background:#09111d;
+
+    padding:35px 0;
+
+    overflow:hidden;
+
+    border-top:2px solid #ff1b3d;
+    border-bottom:2px solid #ff1b3d;
+
+}
+
+.cod-marquee{
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+}
+
+.cod-track{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:55px;
+
+    animation:codScroll 20s linear infinite;
+
+}
+
+.cod-track span{
+
+    color:#fff;
+
+    font-size:48px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.cod-track span:nth-child(even){
+
+    color:#ff1b3d;
+
+    font-size:30px;
+
+}
+
+@keyframes codScroll{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+/* Pause on Hover */
+
+.cod-marquee:hover .cod-track{
+
+    animation-play-state:paused;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.cod-track span{
+
+font-size:26px;
+
+}
+
+.cod-track{
+
+gap:30px;
+
+}
+
+.cod-track span:nth-child(even){
+
+font-size:18px;
+
+}
+
+}
+</style>
+
+<section class="cod-games-section">
+
+    <div class="cod-game-card">
+        <img src="img2.webp" alt="">
+        <h3>SPACE WARS</h3>
+        <p>Engage in intergalactic battles, explore unknown galaxies, and command elite forces.</p>
+        <a href="404.html">FREE</a>
+    </div>
+
+    <div class="cod-game-card">
+        <img src="img3.webp" alt="">
+        <h3>RETURN CARS</h3>
+        <p>Rev up your engines and race through thrilling tracks while customizing your ride.</p>
+        <a href="404.html">FREE</a>
+    </div>
+
+    <div class="cod-game-card">
+        <img src="img4.webp" alt="">
+        <h3>PLANES OF GLORIA</h3>
+        <p>Soar through the skies, engage in epic dogfights and master aerial planets combat.</p>
+        <a href="404.html">FREE</a>
+    </div>
+
+    <div class="cod-game-card">
+        <img src="img6.webp" alt="">
+        <h3>EARTH WARS</h3>
+        <p>Rewrite history in intense global battles and command armies across the world war .</p>
+        <a href="404.html">FREE</a>
+    </div>
+
+</section>
+<style>
+    .cod-games-section{
+
+    width:100%;
+
+    background:#07111d;
+
+    padding:90px 7%;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:35px;
+
+}
+
+.cod-game-card{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:.7s ease;
+
+}
+
+.cod-game-card img{
+
+    width:100%;
+
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    transition:.4s;
+
+}
+
+.cod-game-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.cod-game-card h3{
+
+    color:#fff;
+
+    margin:18px 0 12px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.cod-game-card p{
+
+    color:#b8b8b8;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+
+}
+
+.cod-game-card a{
+
+    color:#ff1b2d;
+
+    text-decoration:none;
+
+    font-size:25px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.cod-game-card a:hover{
+
+    color:#fff;
+
+}
+
+
+/* Tablet */
+
+@media(max-width:991px){
+
+.cod-games-section{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.cod-games-section{
+
+grid-template-columns:1fr;
+
+padding:70px 25px;
+
+gap:45px;
+
+}
+
+.cod-game-card img{
+
+height:300px;
+
+}
+
+.cod-game-card h3{
+
+font-size:24px;
+
+}
+
+.cod-game-card p{
+
+font-size:14px;
+
+}
+
+}
+</style>
+<script>
+    const gameCards=document.querySelectorAll(".cod-game-card");
+
+const gameObserver=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+gameCards.forEach((card,index)=>{
+
+setTimeout(()=>{
+
+card.style.opacity="1";
+
+card.style.transform="translateY(0)";
+
+},index*300);
+
+});
+
+gameObserver.disconnect();
+
+}
+
+});
+
+},{
+threshold:.3
+});
+
+gameObserver.observe(document.querySelector(".cod-games-section"));
+</script>
+<section class="cod-games-section2">
+
+    <div class="cod-game-card2">
+        <img src="img7.webp" alt="">
+        <h3>THE WARRIOR 3</h3>
+        <p>Enter a world of action and honor, master deadly combat and unlock powerful weapons.</p>
+        <a href="404.html">FREE</a>
+    </div>
+
+        <div class="cod-game-card2">
+            <img src="img8.webp" alt="">
+        <h3>LIFE  STRUGGLE</h3>
+        <p>Experience an exciting open world filled with missions, challenges and endless adventures.</p>
+        <a href="404.html">FREE</a>
+    </div>
+
+    <div class="cod-game-card2">
+        <img src="img9.webp".webp" alt="">
+        <h3>GLORIA SOCCER</h3>
+        <p>Lead your team to victory with skillful tactics, precision and realistic football gameplay.</p>
+        <a href="404.html">FREE</a>
+    </div>
+
+    <div class="cod-game-card2">
+        <img src="img10.webp" alt="">
+        <h3>EGYPT  WORLD</h3>
+        <p>Uncover ancient mysteries, build mighty empires and shape history in an epic adventure.</p>
+        <a href="404.html">FREE</a>
+    </div>
+
+</section>
+<style>
+    .cod-games-section2{
+    width:100%;
+    padding:90px 7%;
+    background:#07111d;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:35px;
+}
+
+.cod-game-card2{
+    opacity:0;
+    transform:translateY(70px);
+    transition:.8s ease;
+}
+
+.cod-game-card2 img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:.4s;
+}
+
+.cod-game-card2:hover img{
+    transform:scale(1.05);
+}
+
+.cod-game-card2 h3{
+    color:#fff;
+    font-size:30px;
+    margin:18px 0 10px;
+    font-weight:700;
+}
+
+.cod-game-card2 p{
+    color:#bfbfbf;
+    line-height:1.7;
+    font-size:15px;
+    margin-bottom:18px;
+}
+
+.cod-game-card2 a{
+    text-decoration:none;
+    color:#ff1c2f;
+    font-size:28px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.cod-game-card2 a:hover{
+    color:#fff;
+}
+
+/* Tablet */
+
+@media(max-width:991px){
+
+.cod-games-section2{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.cod-games-section2{
+grid-template-columns:1fr;
+padding:70px 25px;
+gap:45px;
+}
+
+.cod-game-card2 img{
+height:320px;
+}
+
+.cod-game-card2 h3{
+font-size:24px;
+}
+
+.cod-game-card2 p{
+font-size:14px;
+}
+
+.cod-game-card2 a{
+font-size:24px;
+}
+
+}
+</style>
+<script>
+    const gameCards2=document.querySelectorAll(".cod-game-card2");
+
+const gameObserver2=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+gameCards2.forEach((card,index)=>{
+
+setTimeout(()=>{
+
+card.style.opacity="1";
+card.style.transform="translateY(0)";
+
+},index*300);
+
+});
+
+gameObserver2.disconnect();
+
+}
+
+});
+
+},{
+threshold:.3
+});
+
+gameObserver2.observe(document.querySelector(".cod-games-section2"));
+</script>
+<!--====================================
+        UPCOMING MATCHES SECTION
+=====================================-->
+
+<section class="game-match-section">
+
+    <div class="game-match-overlay"></div>
+
+    <div class="game-match-container">
+
+        <!-- Heading -->
+
+        <div class="game-match-header game-fade-item">
+
+            <div>
+
+                <span class="game-match-subtitle">
+                    MATCHES LIST
+                </span>
+
+                <h2>
+                    SEE UPCOMING MATCHES 🔥
+                </h2>
+
+            </div>
+
+            <a href="contact.html" class="game-view-btn">
+                VIEW ALL TEAM
+            </a>
+
+        </div>
+
+        <!--==========================
+            MATCH 1
+        ===========================-->
+
+        <div class="game-match-row game-fade-item">
+
+            <!-- Left Team -->
+
+            <div class="game-team-card">
+
+                <span class="game-star">★</span>
+
+                <img src="images/team1.webp" alt="">
+
+                <div>
+
+                    <h3>SAVAGE GAMING</h3>
+
+                    <p>
+                        WATCH :
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-twitch"></i>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Time -->
+
+            <div class="game-match-time">
+
+                <h2>08 : 30</h2>
+
+                <span>
+                    OCTOBER 7, 2026 • 8:30 PM
+                </span>
+
+            </div>
+
+            <!-- Right Team -->
+
+            <div class="game-team-card game-right-team">
+
+                <div>
+
+                    <h3>FOX GAMING</h3>
+
+                    <p>
+                        WATCH :
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-twitch"></i>
+                    </p>
+
+                </div>
+
+                <img src="images/team2.webp" alt="">
+
+                <span class="game-star">★</span>
+
+            </div>
+
+        </div>
+
+        <!--==========================
+            MATCH 2
+        ===========================-->
+
+        <div class="game-match-row game-fade-item">
+
+            <div class="game-team-card">
+
+                <span class="game-star">★</span>
+
+                <img src="images/team3.webp" alt="">
+
+                <div>
+
+                    <h3>REXREDM GAMING</h3>
+
+                    <p>
+                        WATCH :
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-twitch"></i>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="game-match-time">
+
+                <h2>05 : 30</h2>
+
+                <span>
+                    OCTOBER 8, 2026 • 5:30 PM
+                </span>
+
+            </div>
+
+            <div class="game-team-card game-right-team">
+
+                <div>
+
+                    <h3>DRAGON GAMING</h3>
+
+                    <p>
+                        WATCH :
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-twitch"></i>
+                    </p>
+
+                </div>
+
+                <img src="images/team4.webp" alt="">
+
+                <span class="game-star">★</span>
+
+            </div>
+
+        </div>
+
+        <!--==========================
+            MATCH 3
+        ===========================-->
+
+        <div class="game-match-row game-fade-item">
+
+            <div class="game-team-card">
+
+                <span class="game-star">★</span>
+
+                <img src="images/team5.webp" alt="">
+
+                <div>
+
+                    <h3>WOLF GAMING</h3>
+
+                    <p>
+                        WATCH :
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-twitch"></i>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="game-match-time">
+
+                <h2>09 : 30</h2>
+
+                <span>
+                    OCTOBER 9, 2026 • 9:30 PM
+                </span>
+
+            </div>
+
+            <div class="game-team-card game-right-team">
+
+                <div>
+
+                    <h3>THE TADIUM</h3>
+
+                    <p>
+                        WATCH :
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-twitch"></i>
+                    </p>
+
+                </div>
+
+                <img src="images/team6.webp" alt="">
+
+                <span class="game-star">★</span>
+
+            </div>
+
+        </div>
+
+        <!--==========================
+            MATCH 4
+        ===========================-->
+
+        <div class="game-match-row game-fade-item">
+
+            <div class="game-team-card">
+
+                <span class="game-star">★</span>
+
+                <img src="images/team7.webp" alt="">
+
+                <div>
+
+                    <h3>GULDAN BOI</h3>
+
+                    <p>
+                        WATCH :
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-twitch"></i>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="game-match-time">
+
+                <h2>06 : 30</h2>
+
+                <span>
+                    OCTOBER 10, 2026 • 6:30 PM
+                </span>
+
+            </div>
+
+            <div class="game-team-card game-right-team">
+
+                <div>
+
+                    <h3>SHINOBI GAMING</h3>
+
+                    <p>
+                        WATCH :
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-twitch"></i>
+                    </p>
+
+                </div>
+
+                <img src="images/team8.webp" alt="">
+
+                <span class="game-star">★</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<style>
+    /*====================================
+      UPCOMING MATCHES SECTION
+=====================================*/
+
+.game-match-section{
+    position:relative;
+    padding:120px 8%;
+    background:url("images/match-bg.webp") center center/cover no-repeat;
+    overflow:hidden;
+}
+
+.game-match-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(7,10,18,.88);
+}
+
+.game-match-container{
+    position:relative;
+    z-index:2;
+    max-width:1450px;
+    margin:auto;
+}
+
+/*====================================
+HEADER
+=====================================*/
+
+.game-match-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:70px;
+}
+
+.game-match-subtitle{
+    color:#ff2d3d;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:5px;
+    text-transform:uppercase;
+}
+
+.game-match-header h2{
+    color:#fff;
+    font-size:54px;
+    font-weight:800;
+    margin-top:12px;
+    text-transform:uppercase;
+}
+
+/*====================================
+BUTTON
+=====================================*/
+
+.game-view-btn{
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:#ff2d3d;
+
+    padding:18px 42px;
+
+    font-weight:700;
+
+    clip-path:polygon(10% 0,
+    100% 0,
+    90% 100%,
+    0 100%);
+
+    transition:.35s;
+
+}
+
+.game-view-btn:hover{
+
+    background:#ff4a58;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 25px rgba(255,45,61,.5);
+
+}
+
+/*====================================
+MATCH ROW
+=====================================*/
+
+.game-match-row{
+
+    display:grid;
+
+    grid-template-columns:1fr auto 1fr;
+
+    gap:35px;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+/*====================================
+TEAM CARD
+=====================================*/
+
+.game-team-card{
+
+    background:rgba(33,30,66,.78);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:15px 25px;
+
+    transition:.4s;
+
+    position:relative;
+
+}
+
+.game-team-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#ff2d3d;
+
+    box-shadow:0 0 25px rgba(255,45,61,.3);
+
+}
+
+.game-team-card img{
+
+    width:95px;
+
+    transition:.4s;
+
+}
+
+.game-team-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.game-team-card h3{
+
+    color:#fff;
+
+    font-size:24px;
+
+    margin-bottom:12px;
+
+}
+
+.game-team-card p{
+
+    color:#bbb;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+}
+
+.game-team-card i{
+
+    margin-left:10px;
+
+    color:#fff;
+
+}
+
+.game-star{
+
+    color:#ff2d3d;
+
+    font-size:22px;
+
+}
+
+/*====================================
+MATCH TIME
+=====================================*/
+
+.game-match-time{
+
+    text-align:center;
+
+}
+
+.game-match-time h2{
+
+    color:#fff;
+
+    font-size:58px;
+
+    letter-spacing:5px;
+
+    font-weight:800;
+
+}
+
+.game-match-time span{
+
+    color:#ff2d3d;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+}
+
+/*====================================
+FADE ANIMATION
+=====================================*/
+
+.game-fade-item{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:1s;
+
+}
+
+.game-fade-item.game-show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*====================================
+RESPONSIVE
+=====================================*/
+
+@media(max-width:1200px){
+
+.game-match-row{
+
+grid-template-columns:1fr;
+
+gap:30px;
+
+}
+
+.game-match-header{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:30px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.game-match-section{
+
+padding:80px 20px;
+
+}
+
+.game-match-header h2{
+
+font-size:34px;
+
+}
+
+.game-team-card{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:20px;
+
+}
+
+.game-right-team{
+
+flex-direction:column-reverse;
+
+}
+
+.game-team-card img{
+
+width:75px;
+
+}
+
+.game-team-card h3{
+
+font-size:20px;
+
+}
+
+.game-match-time h2{
+
+font-size:42px;
+
+}
+
+.game-view-btn{
+
+padding:15px 30px;
+
+}
+.game-view-btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.game-view-btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+    height:0;
+
+    left:var(--x);
+    top:var(--y);
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+    transition:.6s;
+
+}
+
+.game-view-btn:hover::after{
+
+    width:320px;
+    height:320px;
+
+}
+}
+</style>
+<script>
+//=======================================
+// UPCOMING MATCHES SCROLL ANIMATION
+//=======================================
+
+const matchSection = document.querySelector(".game-match-section");
+
+const matchItems = [
+    document.querySelector(".game-match-header"),
+    ...document.querySelectorAll(".game-match-row")
+];
+
+const matchObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            matchItems.forEach((item, index) => {
+
+                setTimeout(() => {
+
+                    item.classList.add("game-show");
+
+                }, index * 250);
+
+            });
+
+        } else {
+
+            matchItems.forEach(item => {
+
+                item.classList.remove("game-show");
+
+            });
+
+        }
+
+    });
+
+}, {
+    threshold:0.25
+});
+
+matchObserver.observe(matchSection);
+
+
+//=======================================
+// TEAM CARD PARALLAX
+//=======================================
+
+const cards = document.querySelectorAll(".game-team-card");
+
+cards.forEach(card=>{
+
+    card.addEventListener("mousemove",(e)=>{
+
+        const rect = card.getBoundingClientRect();
+
+        const x = (e.clientX - rect.left - rect.width/2)/18;
+
+        const y = (e.clientY - rect.top - rect.height/2)/18;
+
+        card.style.transform =
+        `perspective(800px)
+         rotateY(${x}deg)
+         rotateX(${-y}deg)
+         translateY(-8px)`;
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform="";
+
+    });
+
+});
+
+
+//=======================================
+// BUTTON RIPPLE
+//=======================================
+
+const viewBtn = document.querySelector(".game-view-btn");
+
+viewBtn.addEventListener("mousemove",function(e){
+
+    const rect = this.getBoundingClientRect();
+
+    this.style.setProperty("--x",
+    `${e.clientX-rect.left}px`);
+
+    this.style.setProperty("--y",
+    `${e.clientY-rect.top}px`);
+
+});
+
+
+//=======================================
+// MATCH TIME GLOW
+//=======================================
+
+const times = document.querySelectorAll(".game-match-time h2");
+
+setInterval(()=>{
+
+    times.forEach(time=>{
+
+        time.style.textShadow =
+        "0 0 25px rgba(255,45,61,.8)";
+
+        setTimeout(()=>{
+
+            time.style.textShadow =
+            "0 0 10px rgba(255,255,255,.15)";
+
+        },700);
+
+    });
+
+},1800);
+</script>
+
+<footer class="stack-footer">
+
+    <h1 class="stack-bg-text">STACKLY</h1>
+
+    <div class="stack-footer-box">
+
+        <!-- Column 1 -->
+        <div class="stack-col">
+
+            <i class="fa-solid fa-gamepad"></i><div class="stack-logo">
+    <img src="logo.webp" alt="Stackly Logo">
+</div>
+
+            <h3>Ready to Play?</h3>
+
+            <p>
+                Join the Stackly gaming community and discover amazing
+                games every day.
+            </p>
+
+            <a href="contact.html" class="stack-red-btn">
+                Book a Call
+            </a>
+
+            <a href="404.html" class="stack-outline-btn">
+                View Games
+            </a>
+
+        </div>
+
+        <!-- Column 2 -->
+
+        <div class="stack-col">
+
+            <h4>Navigation</h4>
+
+            <a href="home.html">Home</a>
+
+            <a href="Games.html">Games</a>
+
+            <a href="service.html">Services</a>
+
+            <a href="blog.html">Blog</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <!-- Column 3 -->
+
+        <div class="stack-col">
+
+            <h4>Legal</h4>
+
+            <a href="404.html">Privacy Policy</a>
+
+            <a href="404.html">Terms & Conditions</a>
+
+            <a href="404.html">Refund Policy</a>
+
+        </div>
+
+        <!-- Column 4 -->
+
+        <div class="stack-col">
+
+            <h4>Contact</h4>
+
+            <p>support@stackly.com</p>
+
+            <a href="contact.html" class="stack-red-btn">
+                Contact Us
+            </a>
+
+        </div>
+
+        <!-- Column 5 -->
+
+        <div class="stack-col">
+
+            <h4>Follow Us</h4>
+
+            <div class="stack-social">
+
+                <a href="404.html"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="404.html"><i class="fab fa-instagram"></i></a>
+
+                <a href="404.html"><i class="fab fa-x-twitter"></i></a>
+
+                <a href="404.html"><i class="fab fa-discord"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+<style>
+    .stack-footer{
+
+    position:relative;
+
+    background:#070707;
+
+    padding:140px 6% 70px;
+
+    overflow:hidden;
+
+}
+.stack-logo{
+    width:80px;
+    margin-bottom:20px;
+}
+
+.stack-logo img{
+    width:100%;
+    display:block;
+    object-fit:contain;
+    transition:.4s ease;
+}
+
+.stack-logo img:hover{
+    transform:scale(1.08);
+}.stack-logo{
+    width:150px;
+    margin-bottom:25px;
+}
+
+.stack-bg-text{
+
+    position:absolute;
+
+    top:-40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:180px;
+
+    font-weight:900;
+
+    color:rgba(255,255,255,.03);
+
+    letter-spacing:10px;
+
+    user-select:none;
+
+}
+
+.stack-footer-box{
+
+    position:relative;
+
+    z-index:2;
+
+    background:#111;
+
+    border-radius:20px;
+
+    padding:60px;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+
+    gap:40px;
+
+}
+
+.stack-col h3{
+
+    color:#fff;
+
+    margin:18px 0;
+
+}
+
+.stack-col h4{
+
+    color:#fff;
+
+    margin-bottom:20px;
+
+}
+
+.stack-col p{
+
+    color:#aaa;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+.stack-col a{
+
+    display:block;
+
+    color:#bbb;
+
+    text-decoration:none;
+
+    margin-bottom:14px;
+
+    transition:.3s;
+
+}
+
+.stack-col a:hover{
+
+    color:#ff1e3c;
+
+}
+
+.stack-red-btn{
+
+    display:inline-block;
+
+    width:fit-content;
+
+    padding:14px 28px;
+
+    background:#ff1e3c;
+
+    color:#fff!important;
+
+    border-radius:40px;
+
+    margin-bottom:15px;
+
+    transition:.35s;
+
+}
+
+.stack-red-btn:hover{
+
+    transform:translateY(-5px);
+
+    background:#ff3955;
+
+}
+
+.stack-outline-btn{
+
+    display:inline-block;
+
+    width:fit-content;
+
+    padding:13px 28px;
+
+    border:2px solid #444;
+
+    border-radius:40px;
+
+}
+
+.stack-outline-btn:hover{
+
+    border-color:#ff1e3c;
+
+}
+
+.stack-social{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.stack-social a{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:1px solid #444;
+
+    border-radius:50%;
+
+    transition:.35s;
+
+}
+
+.stack-social a:hover{
+
+    background:#ff1e3c;
+
+    border-color:#ff1e3c;
+
+    color:#fff;
+
+}
+
+/* Tablet */
+
+@media(max-width:991px){
+
+.stack-footer-box{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.stack-bg-text{
+
+font-size:110px;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.stack-footer{
+
+padding:90px 20px 50px;
+
+}
+
+.stack-footer-box{
+
+grid-template-columns:1fr;
+
+padding:35px 25px;
+
+}
+
+.stack-bg-text{
+
+font-size:70px;
+
+top:10px;
+
+}
+
+.stack-col{
+
+text-align:center;
+
+}
+
+.stack-red-btn,
+
+.stack-outline-btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+.stack-social{
+
+justify-content:center;
+
+}
+
+}
+</style>
+</body>
+</html>

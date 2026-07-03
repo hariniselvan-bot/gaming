@@ -1291,9 +1291,77 @@ padding:90px 20px 30px;
 
 /*========================================
           RESPONSIVE
+========================================*//*========================================
+      MOBILE VIEW
 ========================================*/
+@media (max-width:991px){
 
-@media(max-width:991px){
+.stackly-menu-btn{
+    display:flex;
+    right:20px;
+    left:auto;
+    top:20px;
+    z-index:2000;
+}
+
+.stackly-sidebar{
+    left:-300px;
+}
+
+.stackly-sidebar.active{
+    left:0;
+}
+
+.stackly-main{
+    margin-left:0;
+    padding:120px 20px 30px;
+}
+
+.stackly-header{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.stackly-header-right{
+    width:100%;
+    flex-wrap:wrap;
+}
+
+.stackly-search{
+    width:100%;
+}
+
+.stackly-search input{
+    width:100%;
+}
+
+.stackly-profile{
+    width:100%;
+}
+
+.stackly-hero{
+    grid-template-columns:1fr;
+    padding:35px 25px;
+    text-align:center;
+}
+
+.stackly-hero-left p{
+    margin:auto auto 30px;
+}
+
+.stackly-hero-buttons{
+    justify-content:center;
+}
+
+.stackly-hero-right{
+    margin-top:20px;
+}
+
+.stackly-hero-left h1{
+    font-size:42px;
+}
+
+}@media(max-width:991px){
 
 .stackly-header{
 

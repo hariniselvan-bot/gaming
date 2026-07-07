@@ -1,269 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>404 - Page Not Found</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Oxanium',sans-serif;
-}
-
-body{
-background:#050505;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-overflow:hidden;
-color:#fff;
-}
-
-.stackly404-section{
-
-width:100%;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
-padding:20px;
-
-}
-
-.stackly404-glow{
-
-position:absolute;
-width:550px;
-height:550px;
-border-radius:50%;
-background:radial-gradient(circle,
-rgba(255,0,0,.25),
-transparent);
-
-filter:blur(80px);
-
-animation:float 6s infinite ease-in-out;
-
-}
-
-.stackly404-box{
-
-position:relative;
-
-z-index:2;
-
-background:#111;
-
-padding:60px;
-
-border-radius:25px;
-
-border:1px solid rgba(255,255,255,.08);
-
-width:700px;
-
-max-width:100%;
-
-text-align:center;
-
-box-shadow:0 0 40px rgba(255,0,0,.15);
-
-}
-
-.stackly404-box h1{
-
-font-size:160px;
-
-line-height:1;
-
-color:#ff2020;
-
-}
-
-.stackly404-box h2{
-
-font-size:40px;
-
-margin:20px 0;
-
-}
-
-.stackly404-box p{
-
-color:#aaa;
-
-line-height:1.8;
-
-margin-bottom:40px;
-
-}
-
-.stackly404-buttons{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-}
-
-.stackly404-buttons button,
-.stackly404-buttons a{
-
-padding:16px 40px;
-
-border:none;
-
-outline:none;
-
-cursor:pointer;
-
-border-radius:50px;
-
-font-size:16px;
-
-font-weight:700;
-
-text-decoration:none;
-
-background:linear-gradient(90deg,#ff2020,#850000);
-
-color:#fff;
-
-transition:.35s;
-
-}
-
-.stackly404-buttons button:hover,
-.stackly404-buttons a:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 0 25px rgba(255,0,0,.35);
-
-}
-
-@keyframes float{
-
-50%{
-
-transform:translateY(-25px);
-
-}
-
-}
-
-@media(max-width:768px){
-
-.stackly404-box{
-
-padding:35px 25px;
-
-}
-
-.stackly404-box h1{
-
-font-size:100px;
-
-}
-
-.stackly404-box h2{
-
-font-size:30px;
-
-}
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - Stackly</title>
+  <meta name="description" content="The page you are looking for could not be found.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .error-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--bg-cream);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .error-section::before {
+      content: '404';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30rem;
+      font-weight: 800;
+      color: var(--primary);
+      opacity: 0.03;
+      font-family: var(--font-body);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .error-content {
+      position: relative;
+      z-index: 1;
+    }
+    .error-content h1 {
+      font-size: 10rem;
+      line-height: 1;
+      color: var(--primary);
+      opacity: 0.15;
+      font-family: var(--font-body);
+      font-weight: 800;
+    }
+    .error-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      margin-top: -20px;
+    }
+    .error-content p {
+      font-size: 1.1rem;
+      color: var(--text-body);
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .error-illustration {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+    .error-illustration .planet {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 60px rgba(107, 29, 29, 0.3);
+    }
+    .error-illustration .orbit {
+      width: 200px;
+      height: 200px;
+      border: 2px dashed var(--border-light);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 20s linear infinite;
+    }
+    .error-illustration .satellite {
+      width: 30px;
+      height: 30px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 20px rgba(201, 162, 39, 0.4);
+    }
+    .error-illustration .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .error-illustration .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: twinkle 2s ease-in-out infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+    @keyframes spin {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+  </style>
 </head>
-
 <body>
+  <section class="error-section">
+    <div class="error-content">
+      <div class="error-illustration">
+        <div class="stars">
+          <div class="star" style="top:20%; left:10%; animation-delay:0s;"></div>
+          <div class="star" style="top:15%; right:20%; animation-delay:0.5s;"></div>
+          <div class="star" style="bottom:25%; left:15%; animation-delay:1s;"></div>
+          <div class="star" style="bottom:20%; right:10%; animation-delay:1.5s;"></div>
+          <div class="star" style="top:40%; left:5%; animation-delay:0.3s;"></div>
+          <div class="star" style="top:60%; right:5%; animation-delay:0.8s;"></div>
+        </div>
+        <div class="orbit">
+          <div class="satellite"></div>
+        </div>
+        <div class="planet"></div>
+      </div>
+      
+      <h1>404</h1>
+      <h2>Lost in Space?</h2>
+      <p>The page you're looking for seems to have floated away into the digital cosmos. Don't worry, we'll help you find your way back.</p>
+      
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <button type="button" class="btn btn-primary btn-lg" onclick="window.history.back();"><i class="fas fa-arrow-left"></i> Back</button>
+        <a href="contact.html" class="btn btn-secondary btn-lg"><i class="fas fa-envelope"></i> Contact Support</a>
+      </div>
+    </div>
+  </section>
 
-<section class="stackly404-section">
-
-<div class="stackly404-glow"></div>
-
-<div class="stackly404-box">
-
-<h1>404</h1>
-
-<h2>Oops! Page Not Found</h2>
-
-<p>
-
-The page you requested could not be found.
-
-</p>
-
-<div class="stackly404-buttons">
-
-<button id="stacklyGoBack">
-
-<i class="fa-solid fa-arrow-left"></i>
-
-Go Back
-
-</button>
-
-<a href="index.html">
-
-<i class="fa-solid fa-house"></i>
-
-Home
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<script>
-
-document.getElementById("stacklyGoBack").addEventListener("click",function(){
-
-const previous=sessionStorage.getItem("previousPage");
-
-if(previous){
-
-window.location.href=previous;
-
-}else if(history.length>1){
-
-history.back();
-
-}else{
-
-window.location.href="index.html";
-
-}
-
-});
-
-</script>
-
+  <script src="js/main.js"></script>
 </body>
-
 </html>

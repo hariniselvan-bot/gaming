@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Stackly</title>
+  <meta name="description" content="Find answers to frequently asked questions about Stackly's courses, pricing, and platform.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="preloader"><div class="preloader-spinner"></div></div>
+
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span><i class="fas fa-graduation-cap"></i> Welcome To Our <strong>Stackly</strong> Learning Platform</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+12345678900"><i class="fas fa-phone"></i> +1 (234) 567 8900</a>
+        <a href="mailto:info@stackly.com"><i class="fas fa-envelope"></i> info@stackly.com</a>
+        <span><i class="fas fa-globe"></i> English</span>
+      </div>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <div class="container">
+      <a href="index.html" class="logo">
+    <img src="image/logo.webp" alt="Stackly" class="stackly-logo">
+</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <a href="login.html" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+    <a href="blog.html">Blog</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a><a href="login.html">Login</a><a href="register.html">Register</a>
+  </div>
+  <div class="overlay"></div>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Frequently Asked Questions</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+        <span class="current">FAQ</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-subtitle fade-in">FAQ</p>
+        <h2 class="section-title fade-in stagger-1">Got Questions? We've Got Answers</h2>
+        <p class="fade-in stagger-2">Everything you need to know about Stackly. Can't find what you're looking for? <a href="contact.html" style="color:var(--primary);">Contact us</a>.</p>
+      </div>
+
+      <!-- FAQ Categories -->
+      <div style="text-align:center; margin-bottom:40px;">
+        <div class="fade-in" style="display:inline-flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+          <button class="btn btn-primary btn-sm faq-cat-btn active" data-cat="all">All</button>
+          <button class="btn btn-secondary btn-sm faq-cat-btn" data-cat="general" style="border-width:1px;">General</button>
+          <button class="btn btn-secondary btn-sm faq-cat-btn" data-cat="courses" style="border-width:1px;">Courses</button>
+          <button class="btn btn-secondary btn-sm faq-cat-btn" data-cat="billing" style="border-width:1px;">Billing</button>
+          <button class="btn btn-secondary btn-sm faq-cat-btn" data-cat="technical" style="border-width:1px;">Technical</button>
+        </div>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-list">
+          <div class="faq-item fade-in active" data-category="general">
+            <button class="faq-question">How do I get started with Stackly? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer"><p>Getting started is easy! Simply create a free account, browse our course catalog, and enroll in any course that interests you. You can start learning immediately with our free tier or upgrade to a paid plan for full access.</p></div>
+          </div>
+
+          <div class="faq-item fade-in stagger-1" data-category="general">
+            <button class="faq-question">Is Stackly suitable for beginners? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer"><p>Absolutely! We have courses designed for all skill levels, from complete beginners to advanced professionals. Each course clearly indicates its difficulty level, and many include prerequisite information to help you choose the right starting point.</p></div>
+          </div>
+
+          <div class="faq-item fade-in stagger-2" data-category="courses">
+            <button class="faq-question">Are the certificates recognized by employers? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer"><p>Yes! Our certificates are industry-recognized and valued by employers worldwide. We partner with leading companies to ensure our curriculum meets industry standards and our certificates carry weight in the job market.</p></div>
+          </div>
+
+          <div class="faq-item fade-in stagger-3" data-category="courses">
+            <button class="faq-question">How long do I have access to a course? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer"><p>Once you enroll in a course, you have lifetime access to the materials. This includes all videos, resources, and future updates to the course content. Learn at your own pace without any time pressure.</p></div>
+          </div>
+
+          <div class="faq-item fade-in" data-category="billing">
+            <button class="faq-question">Can I switch between plans? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer"><p>Absolutely! You can upgrade or downgrade your plan at any time. When you upgrade, you'll get immediate access to new features. When you downgrade, changes will take effect at the start of your next billing cycle.</p></div>
+          </div>
+
+          <div class="faq-item fade-in stagger-1" data-category="billing">
+            <button class="faq-question">Do you offer refunds? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer"><p>We offer a 30-day money-back guarantee on all paid plans. If you're not satisfied with our platform, contact our support team within 30 days for a full refund, no questions asked.</p></div>
+          </div>
+
+          <div class="faq-item fade-in stagger-2" data-category="billing">
+            <button class="faq-question">What payment methods do you accept? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer"><p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual enterprise plans. All payments are processed securely through our encrypted payment system.</p></div>
+          </div>
+
+          <div class="faq-item fade-in" data-category="technical">
+            <button class="faq-question">How do the live classes work? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer"><p>Live classes are conducted via our integrated video platform. You'll receive a schedule upon enrollment and can join classes directly from your dashboard. All live sessions are recorded so you can watch them later if you miss one.</p></div>
+          </div>
+
+          <div class="faq-item fade-in stagger-1" data-category="technical">
+            <button class="faq-question">Is there a mobile app available? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer"><p>Yes! Stackly is available on iOS and Android. Download our app to learn on the go, download courses for offline viewing, and receive notifications about new content and live classes.</p></div>
+          </div>
+
+          <div class="faq-item fade-in stagger-2" data-category="technical">
+            <button class="faq-question">What are the system requirements? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer"><p>Stackly works on any modern web browser (Chrome, Firefox, Safari, Edge) with an internet connection. For the best experience, we recommend a stable connection of at least 5 Mbps. Mobile apps require iOS 13+ or Android 8+.</p></div>
+          </div>
+        </div>
+
+        <div class="faq-image slide-right">
+          <img src="image/img13.webp" alt="FAQ">
+          <!-- Contact Card -->
+          <div style="background:var(--primary); color:#fff; padding:28px; border-radius:var(--radius-md); margin-top:20px; text-align:center;">
+            <i class="fas fa-headset" style="font-size:2rem; margin-bottom:12px;"></i>
+            <h5 style="color:#fff; margin-bottom:8px;">Still have questions?</h5>
+            <p style="font-size:0.9rem; opacity:0.9; margin-bottom:16px;">Our support team is here to help you 24/7.</p>
+            <a href="contact.html" class="btn btn-white" style="width:100%;">Contact Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+ <a href="index.html" class="logo">
+    <img src="image/logo.webp" alt="Stackly" class="stackly-logo">
+</a> 
+          <p>Empowering learners worldwide with cutting-edge education and technology.</p>
+          <div class="social-links">
+            <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="404.html" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+            <li><a href="pricing.html"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Support</h5>
+          <ul class="footer-links">
+            <li><a href="faq.html"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="404.html"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+            <li><a href="404.html"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+            <li><a href="404.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+            <li><a href="login.html"><i class="fas fa-chevron-right"></i> Login</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Contact Us</h5>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> 123 Education Street, Tech City, TC 12345</li>
+            <li><i class="fas fa-phone"></i> +1 (234) 567 8900</li>
+            <li><i class="fas fa-envelope"></i> info@stackly.com</li>
+            <li><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Stackly. All rights reserved.</p>
+        <p>Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> by Stackly Team</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+  <script src="js/main.js"></script>
+</body>
+</html>

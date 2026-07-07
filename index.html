@@ -1,628 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Stackly Loading</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="loading.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - Empowering the Minds of the Future</title>
+  <meta name="description" content="Stackly is a global center for learning, research, and innovation. Join a community dedicated to solving the world's biggest challenges.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
 
-<div class="stackly-loader-page">
-
-    <!-- Background Glow -->
-
-    <div class="stackly-loader-glow stackly-glow-one"></div>
-    <div class="stackly-loader-glow stackly-glow-two"></div>
-
-    <!-- Loader -->
-
-    <div class="stackly-loader-box">
-
-        <!-- Rotating Circle -->
-
-        <div class="stackly-loader-circle">
-
-            <svg class="stackly-loader-svg" viewBox="0 0 200 200">
-
-                <!-- Background Circle -->
-
-                <circle
-                    class="stackly-loader-track"
-                    cx="100"
-                    cy="100"
-                    r="82">
-                </circle>
-
-                <!-- Animated Circle -->
-
-                <circle
-                    class="stackly-loader-progress"
-                    cx="100"
-                    cy="100"
-                    r="82">
-                </circle>
-
-            </svg>
-
-            <!-- Logo -->
-
-            <div class="stackly-loader-logo">
-
-                <!-- Replace with your logo -->
-
-                <img src="logo.webp" alt="Stackly Logo">
-
-            </div>
-
-        </div>
-
-        <!-- Brand -->
-
-        <h1 class="stackly-loader-title">
-
-            STACKLY
-
-        </h1>
-
-        <!-- Loading Text -->
-
-        <div class="stackly-loader-text">
-
-            <span>L</span>
-            <span>O</span>
-            <span>A</span>
-            <span>D</span>
-            <span>I</span>
-            <span>N</span>
-            <span>G</span>
-
-        </div>
-
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span><i class="fas fa-graduation-cap"></i> Welcome To Our <strong>Stackly</strong> Learning Platform</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+12345678900"><i class="fas fa-phone"></i> +1 (234) 567 8900</a>
+        <a href="mailto:info@stackly.com"><i class="fas fa-envelope"></i> info@stackly.com</a>
+        <span><i class="fas fa-globe"></i> English</span>
+      </div>
     </div>
-
-</div>
-
-<script src="loading.js"></script>
-<style>
-    /*========================================
-    GOOGLE FONT & RESET
-========================================*/
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Oxanium',sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#070312;
-    overflow:hidden;
-}
-
-/*========================================
-    PAGE
-========================================*/
-
-.stackly-loader-page{
-
-    position:relative;
-
-    width:100%;
-
-    height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-    background:linear-gradient(180deg,#080312,#040207);
-
-}
-
-/*========================================
-    BACKGROUND GLOW
-========================================*/
-
-.stackly-loader-glow{
-
-    position:absolute;
-
-    width:420px;
-
-    height:420px;
-
-    border-radius:50%;
-
-    filter:blur(120px);
-
-}
-
-.stackly-glow-one{
-
-    top:-120px;
-
-    left:-120px;
-
-    background:rgba(255,0,0,.15);
-
-}
-
-.stackly-glow-two{
-
-    bottom:-120px;
-
-    right:-120px;
-
-    background:rgba(255,0,0,.12);
-
-}
-
-/*========================================
-    BOX
-========================================*/
-
-.stackly-loader-box{
-
-    position:relative;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:2;
-
-}
-
-/*========================================
-    CIRCLE
-========================================*/
-
-.stackly-loader-circle{
-
-    position:relative;
-
-    width:260px;
-
-    height:260px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-/*========================================
-    SVG
-========================================*/
-
-.stackly-loader-svg{
-
-    position:absolute;
-
-    width:260px;
-
-    height:260px;
-
-    transform:rotate(-90deg);
-
-}
-
-/*========================================
-    TRACK
-========================================*/
-
-.stackly-loader-track{
-
-    fill:none;
-
-    stroke:#1a1a25;
-
-    stroke-width:8;
-
-}
-
-/*========================================
-    PROGRESS
-========================================*/
-
-.stackly-loader-progress{
-
-    fill:none;
-
-    stroke:#ff2020;
-
-    stroke-width:8;
-
-    stroke-linecap:round;
-
-    stroke-dasharray:515;
-
-    stroke-dashoffset:170;
-
-    filter:drop-shadow(0 0 12px #ff2020);
-
-    animation:stacklyRotate 2s linear infinite;
-
-}
-
-/*========================================
-    LOGO
-========================================*/
-
-.stackly-loader-logo{
-
-    width:120px;
-
-    height:120px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:#090909;
-
-    box-shadow:
-    0 0 30px rgba(255,0,0,.25);
-
-}
-
-.stackly-loader-logo img{
-
-    width:75px;
-
-    object-fit:contain;
-
-}
-
-/*========================================
-    TITLE
-========================================*/
-
-.stackly-loader-title{
-
-    margin-top:35px;
-
-    font-size:52px;
-
-    font-weight:800;
-
-    letter-spacing:5px;
-
-    color:#ffffff;
-
-    text-shadow:0 0 15px rgba(255,0,0,.3);
-
-}
-
-/*========================================
-    LOADING TEXT
-========================================*/
-
-.stackly-loader-text{
-
-    display:flex;
-
-    gap:6px;
-
-    margin-top:18px;
-
-}
-
-.stackly-loader-text span{
-
-    color:#9d9d9d;
-
-    font-size:18px;
-
-    letter-spacing:3px;
-
-    animation:stacklyBounce 1.2s infinite;
-
-}
-
-.stackly-loader-text span:nth-child(2){
-
-animation-delay:.1s;
-
-}
-
-.stackly-loader-text span:nth-child(3){
-
-animation-delay:.2s;
-
-}
-
-.stackly-loader-text span:nth-child(4){
-
-animation-delay:.3s;
-
-}
-
-.stackly-loader-text span:nth-child(5){
-
-animation-delay:.4s;
-
-}
-
-.stackly-loader-text span:nth-child(6){
-
-animation-delay:.5s;
-
-}
-
-.stackly-loader-text span:nth-child(7){
-
-animation-delay:.6s;
-
-}
-
-/*========================================
-    RED SHADOW
-========================================*/
-
-.stackly-loader-box::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:-40px;
-
-    width:180px;
-
-    height:18px;
-
-    background:#ff2020;
-
-    filter:blur(25px);
-
-    opacity:.45;
-
-}
-
-/*========================================
-    ROTATE
-========================================*/
-
-@keyframes stacklyRotate{
-
-    from{
-
-        transform:rotate(0deg);
-
-    }
-
-    to{
-
-        transform:rotate(360deg);
-
-    }
-
-}
-
-/*========================================
-    LOADING
-========================================*/
-
-@keyframes stacklyBounce{
-
-0%,100%{
-
-opacity:.4;
-
-transform:translateY(0);
-
-}
-
-50%{
-
-opacity:1;
-
-color:#ff2020;
-
-transform:translateY(-8px);
-
-}
-
-}
-
-/*========================================
-    MOBILE
-========================================*/
-
-@media(max-width:768px){
-
-.stackly-loader-circle{
-
-width:210px;
-
-height:210px;
-
-}
-
-.stackly-loader-svg{
-
-width:210px;
-
-height:210px;
-
-}
-
-.stackly-loader-logo{
-
-width:95px;
-
-height:95px;
-
-}
-
-.stackly-loader-logo img{
-
-width:60px;
-
-}
-
-.stackly-loader-title{
-
-font-size:36px;
-
-}
-
-.stackly-loader-text span{
-
-font-size:15px;
-
-}
-
-}
-</style>
-<script>
-    //=========================================
-// STACKLY LOADER
-//=========================================
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const logo = document.querySelector(".stackly-loader-logo");
-    const title = document.querySelector(".stackly-loader-title");
-    const loadingText = document.querySelector(".stackly-loader-text");
-
-    /*=========================================
-        LOGO PULSE
-    =========================================*/
-
-    setInterval(() => {
-
-        logo.animate([
-            {
-                transform: "scale(1)"
-            },
-            {
-                transform: "scale(1.08)"
-            },
-            {
-                transform: "scale(1)"
-            }
-
-        ], {
-
-            duration: 1200
-
-        });
-
-    }, 1200);
-
-    /*=========================================
-        TITLE GLOW
-    =========================================*/
-
-    setInterval(() => {
-
-        title.animate([
-            {
-                letterSpacing: "5px",
-                opacity: 1
-            },
-            {
-                letterSpacing: "8px",
-                opacity: .8
-            },
-            {
-                letterSpacing: "5px",
-                opacity: 1
-            }
-
-        ], {
-
-            duration: 1500
-
-        });
-
-    }, 1500);
-
-    /*=========================================
-        LOADING DOTS
-    =========================================*/
-
-    let dots = "";
-
-    setInterval(() => {
-
-        dots += ".";
-
-        if (dots.length > 3) dots = "";
-
-        loadingText.innerHTML = "LOADING" + dots;
-
-    }, 500);
-
-    /*=========================================
-        PAGE REDIRECT
-    =========================================*/
-
-    setTimeout(() => {
-
-        document.body.style.opacity = "0";
-
-        document.body.style.transition = "opacity .8s ease";
-
-        setTimeout(() => {
-
-            window.location.href = "home.html";
-
-        }, 800);
-
-    }, 3000);
-
-});
-window.addEventListener("load", () => {
-
-    setTimeout(() => {
-
-        document.body.style.opacity = "0";
-        document.body.style.transition = "opacity .8s";
-
-        setTimeout(() => {
-
-            window.location.href = "home.html";
-
-        }, 800);
-
-    }, 2500);
-
-});
-</script>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="main-nav">
+    <div class="container">
+      <a href="index.html" class="logo">
+    <img src="image/logo.webp" alt="Stackly" class="stackly-logo">
+</a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <button class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <a href="login.html" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+  </div>
+  <div class="overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge fade-in">
+          <span class="dot"></span>
+          ADMISSIONS OPEN FOR 2025
+        </div>
+        
+        <h1 class="hero-title" data-text-reveal>
+          Empowering the <span class="highlight">Minds</span> of the Future.
+        </h1>
+        
+        <p class="hero-desc fade-in stagger-2">
+          Stackly is a global center for learning, research, and innovation. Join a community dedicated to solving the world's biggest challenges through cutting-edge education and technology.
+        </p>
+        
+        <div class="hero-buttons fade-in stagger-3">
+          <a href="services.html" class="btn btn-primary btn-lg" data-magnetic>
+            Explore Courses <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="about.html" class="btn btn-secondary btn-lg">Learn More</a>
+        </div>
+        
+        <div class="hero-stats fade-in stagger-4">
+          <div class="stat-item">
+            <h4 class="counter" data-counter="15000" data-suffix="+">0</h4>
+            <p>Students Enrolled</p>
+          </div>
+          <div class="stat-item">
+            <h4 class="counter" data-counter="200" data-suffix="+">0</h4>
+            <p>Expert Instructors</p>
+          </div>
+          <div class="stat-item">
+            <h4 class="counter" data-counter="98" data-suffix="%">0</h4>
+            <p>Satisfaction Rate</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-images slide-right">
+        <div class="hero-circle-text">
+          <svg viewBox="0 0 100 100">
+            <defs>
+              <path id="circlePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+            </defs>
+            <text fill="#6B1D1D" font-size="11.5" font-family="Inter" font-weight="600" letter-spacing="3">
+              <textPath href="#circlePath">WORLD CLASS EDUCATION • SINCE 2010 •</textPath>
+            </text>
+          </svg>
+        </div>
+        
+        <div class="hero-img-main">
+          <img src="image/img2.webp" alt="Students celebrating graduation">
+        </div>
+        
+        <div class="hero-img-secondary">
+          <img src="image/img1.webp" alt="Students studying together">
+        </div>
+        
+        <div class="hero-rating">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>#1 CAMPUS LIFE</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images slide-left">
+          <div class="about-img-main">
+            <img src="image/img2.webp" alt="Student on campus">
+          </div>
+          <div class="about-experience scale-in">
+            <h4>15+</h4>
+            <p>Years of<br>Excellence</p>
+          </div>
+        </div>
+        
+        <div class="about-content fade-in stagger-2">
+          <p class="section-subtitle">About Stackly</p>
+          <h2 class="section-title">Transforming Education for the Digital Age</h2>
+          <p>At Stackly, we believe education should be accessible, engaging, and relevant to the modern world. Our platform combines cutting-edge technology with expert-led instruction to deliver an unparalleled learning experience.</p>
+          <p>Whether you're looking to advance your career, learn a new skill, or pursue a passion, Stackly provides the tools and resources you need to succeed in today's fast-paced digital landscape.</p>
+          
+          <div class="about-features">
+            <div class="about-feature-item">
+              <i class="fas fa-check"></i>
+              <span>Expert Instructors</span>
+            </div>
+            <div class="about-feature-item">
+              <i class="fas fa-check"></i>
+              <span>Flexible Learning</span>
+            </div>
+            <div class="about-feature-item">
+              <i class="fas fa-check"></i>
+              <span>Industry Recognized Certificates</span>
+            </div>
+            <div class="about-feature-item">
+              <i class="fas fa-check"></i>
+              <span>24/7 Support</span>
+            </div>
+            <div class="about-feature-item">
+              <i class="fas fa-check"></i>
+              <span>Hands-on Projects</span>
+            </div>
+            <div class="about-feature-item">
+              <i class="fas fa-check"></i>
+              <span>Community Access</span>
+            </div>
+          </div>
+          
+          <a href="about.html" class="btn btn-primary">Discover More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section services-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-subtitle fade-in">Our Services</p>
+        <h2 class="section-title fade-in stagger-1">What We Offer</h2>
+        <p class="fade-in stagger-2">Comprehensive learning solutions designed to help you achieve your goals and unlock your full potential.</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h4>Online Courses</h4>
+          <p>Access thousands of courses across programming, design, business, and more. Learn at your own pace with lifetime access.</p>
+          <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div class="service-card fade-in stagger-1">
+          <div class="service-icon">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h4>Live Classes</h4>
+          <p>Join interactive live sessions with industry experts. Ask questions, collaborate with peers, and get real-time feedback.</p>
+          <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div class="service-card fade-in stagger-2">
+          <div class="service-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h4>Certifications</h4>
+          <p>Earn industry-recognized certificates to showcase your skills. Boost your resume and advance your career.</p>
+          <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div class="service-card fade-in stagger-3">
+          <div class="service-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h4>Mentorship</h4>
+          <p>Get personalized guidance from experienced mentors. One-on-one sessions to help you navigate your learning journey.</p>
+          <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div class="service-card fade-in stagger-4">
+          <div class="service-icon">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <h4>Enterprise Training</h4>
+          <p>Customized training solutions for organizations. Upskill your team with tailored programs and progress tracking.</p>
+          <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div class="service-card fade-in stagger-5">
+          <div class="service-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h4>Resource Library</h4>
+          <p>Access our extensive library of e-books, tutorials, code samples, and learning materials to support your growth.</p>
+          <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="section blog-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-subtitle fade-in">Latest News</p>
+        <h2 class="section-title fade-in stagger-1">From Our Blog</h2>
+        <p class="fade-in stagger-2">Stay updated with the latest trends, insights, and stories from the world of education and technology.</p>
+      </div>
+      
+      <div class="blog-grid">
+        <article class="blog-card fade-in">
+          <div class="blog-img">
+            <img src="image/img3.webp" alt="AI in Education">
+            <span class="blog-category">Technology</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="fas fa-calendar"></i> Jan 15, 2025</span>
+              <span><i class="fas fa-user"></i> Admin</span>
+            </div>
+            <h4><a href="blog.html">The Future of AI in Education: Transforming How We Learn</a></h4>
+            <p>Explore how artificial intelligence is revolutionizing the education sector and creating personalized learning experiences...</p>
+          </div>
+        </article>
+        
+        <article class="blog-card fade-in stagger-1">
+          <div class="blog-img">
+            <img src="image/img4.webp" alt="Team collaboration">
+            <span class="blog-category">Career</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="fas fa-calendar"></i> Jan 10, 2025</span>
+              <span><i class="fas fa-user"></i> Sarah Lee</span>
+            </div>
+            <h4><a href="blog.html">Top 10 Skills Employers Are Looking for in 2025</a></h4>
+            <p>Discover the most in-demand skills that can help you land your dream job and advance your career this year...</p>
+          </div>
+        </article>
+        
+        <article class="blog-card fade-in stagger-2">
+          <div class="blog-img">
+            <img src="image/img5.webp" alt="Student studying">
+            <span class="blog-category">Learning</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="fas fa-calendar"></i> Jan 5, 2025</span>
+              <span><i class="fas fa-user"></i> John Smith</span>
+            </div>
+            <h4><a href="blog.html">How to Stay Motivated While Learning Online</a></h4>
+            <p>Practical tips and strategies to maintain your motivation and achieve your learning goals from home...</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section pricing-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-subtitle fade-in">Pricing Plans</p>
+        <h2 class="section-title fade-in stagger-1">Choose Your Plan</h2>
+        <p class="fade-in stagger-2">Flexible pricing options designed to fit your learning needs and budget.</p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card fade-in">
+          <h4>Starter</h4>
+          <p class="pricing-desc">Perfect for beginners</p>
+          <div class="pricing-price">
+            <span class="currency">$</span>
+            <span class="amount">0</span>
+            <span class="period">/month</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Access to free courses</li>
+            <li><i class="fas fa-check"></i> Community forum access</li>
+            <li><i class="fas fa-check"></i> Basic progress tracking</li>
+            <li><i class="fas fa-check"></i> Email support</li>
+            <li class="not-included"><i class="fas fa-times"></i> Live classes</li>
+            <li class="not-included"><i class="fas fa-times"></i> Certificates</li>
+          </ul>
+          <a href="register.html" class="btn btn-secondary" style="width:100%">Get Started</a>
+        </div>
+        
+        <div class="pricing-card featured fade-in stagger-1">
+          <h4>Professional</h4>
+          <p class="pricing-desc">Best for serious learners</p>
+          <div class="pricing-price">
+            <span class="currency">$</span>
+            <span class="amount">29</span>
+            <span class="period">/month</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Unlimited course access</li>
+            <li><i class="fas fa-check"></i> Live weekly classes</li>
+            <li><i class="fas fa-check"></i> Completion certificates</li>
+            <li><i class="fas fa-check"></i> Priority support</li>
+            <li><i class="fas fa-check"></i> Downloadable resources</li>
+            <li class="not-included"><i class="fas fa-times"></i> 1-on-1 mentorship</li>
+          </ul>
+          <a href="register.html" class="btn btn-primary" style="width:100%">Get Started</a>
+        </div>
+        
+        <div class="pricing-card fade-in stagger-2">
+          <h4>Enterprise</h4>
+          <p class="pricing-desc">For teams & organizations</p>
+          <div class="pricing-price">
+            <span class="currency">$</span>
+            <span class="amount">99</span>
+            <span class="period">/month</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Everything in Pro</li>
+            <li><i class="fas fa-check"></i> 1-on-1 mentorship</li>
+            <li><i class="fas fa-check"></i> Custom learning paths</li>
+            <li><i class="fas fa-check"></i> Team analytics</li>
+            <li><i class="fas fa-check"></i> Dedicated account manager</li>
+            <li><i class="fas fa-check"></i> API access</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary" style="width:100%">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-subtitle fade-in">FAQ</p>
+        <h2 class="section-title fade-in stagger-1">Frequently Asked Questions</h2>
+        <p class="fade-in stagger-2">Find answers to the most common questions about Stackly.</p>
+      </div>
+      
+      <div class="faq-grid">
+        <div class="faq-list">
+          <div class="faq-item fade-in active">
+            <button class="faq-question">
+              How do I get started with Stackly?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Getting started is easy! Simply create a free account, browse our course catalog, and enroll in any course that interests you. You can start learning immediately with our free tier or upgrade to a paid plan for full access.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item fade-in stagger-1">
+            <button class="faq-question">
+              Are the certificates recognized by employers?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Our certificates are industry-recognized and valued by employers worldwide. We partner with leading companies to ensure our curriculum meets industry standards and our certificates carry weight in the job market.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item fade-in stagger-2">
+            <button class="faq-question">
+              Can I switch between plans?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely! You can upgrade or downgrade your plan at any time. When you upgrade, you'll get immediate access to new features. When you downgrade, changes will take effect at the start of your next billing cycle.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item fade-in stagger-3">
+            <button class="faq-question">
+              Do you offer refunds?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We offer a 30-day money-back guarantee on all paid plans. If you're not satisfied with our platform, contact our support team within 30 days for a full refund, no questions asked.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item fade-in stagger-4">
+            <button class="faq-question">
+              How do the live classes work?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Live classes are conducted via our integrated video platform. You'll receive a schedule upon enrollment and can join classes directly from your dashboard. All live sessions are recorded so you can watch them later if you miss one.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item fade-in stagger-5">
+            <button class="faq-question">
+              Is there a mobile app available?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Stackly is available on iOS and Android. Download our app to learn on the go, download courses for offline viewing, and receive notifications about new content and live classes.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-image slide-right">
+          <img src="image/img6.webp" alt="Students collaborating">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+ <a href="index.html" class="logo">
+    <img src="image/logo.webp" alt="Stackly" class="stackly-logo">
+</a> 
+          <p>Empowering learners worldwide with cutting-edge education and technology. Join our community and start your journey today.</p>
+          <div class="social-links">
+            <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="404.html" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+            <li><a href="pricing.html"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h5>Support</h5>
+          <ul class="footer-links">
+            <li><a href="faq.html"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="404.html"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+            <li><a href="404.html"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+            <li><a href="404.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+            <li><a href="login.html"><i class="fas fa-chevron-right"></i> Login</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h5>Contact Us</h5>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> 123 Education Street, Tech City, TC 12345</li>
+            <li><i class="fas fa-phone"></i> +1 (234) 567 8900</li>
+            <li><i class="fas fa-envelope"></i> info@stackly.com</li>
+            <li><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Stackly. All rights reserved.</p>
+        <p>Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> by Stackly Team</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
 </html>
